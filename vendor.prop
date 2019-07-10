@@ -46,6 +46,7 @@ ro.surface_flinger.supports_background_blur=1
 ro.incremental.enable=true
 
 # Media
+debug.stagefright.c2inputsurface=-1
 media.c2.hal.selection=aidl
 
 # Metadata Encryption
