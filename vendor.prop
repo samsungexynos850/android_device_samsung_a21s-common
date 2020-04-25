@@ -27,6 +27,7 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
 ## Dalvik
+dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.lockprof.threshold=500
 
 ## FRP
