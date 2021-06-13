@@ -444,7 +444,6 @@ on boot
     symlink /dev/block/by-name/ufs_test /dev/block/UFS_TEST
 
 on late-fs
-    wait_for_prop hwservicemanager.ready true
     mount_all /vendor/etc/fstab.${ro.hardware} --late
 
 on fs
