@@ -105,6 +105,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_exynos3830
+
 # A/B
 AB_OTA_UPDATER := false
 
