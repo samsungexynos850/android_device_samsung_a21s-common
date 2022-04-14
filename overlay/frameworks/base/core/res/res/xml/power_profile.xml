@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
     <item name="none">0</item>
-    <item name="screen.on">72</item>
-    <item name="screen.full">268</item>
+    <item name="screen.on.display0">72</item>
+    <item name="screen.full.display0">268</item>
     <item name="audio">31</item>
     <item name="video">25</item>
     <item name="camera.avg">189.1</item>
@@ -120,5 +120,6 @@
         <value>865000</value>
         <value>1001000</value>
     </array>
-    <item name="battery.capacity">5000</item>
+    <item name="battery.capacity">4900</item>
+    <item name="battery.typical.capacity">5000</item>
 </device>
