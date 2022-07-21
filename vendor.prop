@@ -30,6 +30,9 @@ bluetooth.profile.sap.server.enabled=true
 dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.lockprof.threshold=500
 
+# Camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
+
 ## Graphics
 debug.sf.latch_unsignaled=1
 ro.hardware.vulkan=mali
