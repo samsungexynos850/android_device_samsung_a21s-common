@@ -66,6 +66,9 @@ function blob_fixup() {
         vendor/lib*/libexynosdisplay.so|vendor/lib*/hw/hwcomposer.exynos850.so|vendor/lib*/sensors.*.so)
             "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
             ;;
+        vendor/lib*/libskeymaster4device.so)
+            "${PATCHELF}" --replace-needed libcrypto.so libcrypto-v33.so "${2}"
+            ;;
     esac
 }
 
