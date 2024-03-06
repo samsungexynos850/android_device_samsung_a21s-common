@@ -572,6 +572,9 @@ struct pcm_config pcm_config_fm_record = {
 
 #define MAX_PCM_PATH_LEN 256
 
+// Duration for Playback
+#define PREDEFINED_DEFAULT_PLAYBACK_DURATION      20  // 20ms
+
 // Duration for DP Playback
 #define PREDEFINED_DP_PLAYBACK_DURATION     20  // 20ms
 
