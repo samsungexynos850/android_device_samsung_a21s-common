@@ -157,9 +157,9 @@ PRODUCT_PACKAGES += \
     libkeymaster4_1support.vendor:64
 
 PRODUCT_PACKAGES += \
-    libcrypto-v33 \
+    libcrypto-tm \
     libshim_crypto:64 \
-    libssl-v33
+    libssl-tm
 
 # Lights
 PRODUCT_PACKAGES += \
