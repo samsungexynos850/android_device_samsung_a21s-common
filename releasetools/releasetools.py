@@ -41,7 +41,7 @@ def AddFirmwareImage(info, model, basename, dest, simple=False, offset=8):
       info.script.AppendExtra('package_extract_file("firmware/%s/%s", "%s");' % (model, basename, dest))
     else:
       size = info.input_zip.getinfo("RADIO/%s_%s" % (basename, model)).file_size
-      info.script.AppendExtra('assert(exynos9611.write_data_bt("firmware/%s/%s", "%s", %d, %d));' % (model, basename, dest, offset, size))
+      info.script.AppendExtra('assert(exynos850.write_data_bt("firmware/%s/%s", "%s", %d, %d));' % (model, basename, dest, offset, size))
       return size
     return 0
 
@@ -59,15 +59,15 @@ def OTA_InstallEnd(info):
         numImages = 0
         info.script.AppendExtra('# Firmware update to %s for %s' % (version, model))
         info.script.AppendExtra('ifelse (getprop("ro.boot.em.model") == "%s" &&' % model)
-        info.script.AppendExtra('exynos9611.verify_no_downgrade("%s") == "0" &&' % version)
+        info.script.AppendExtra('exynos850.verify_no_downgrade("%s") == "0" &&' % version)
         info.script.AppendExtra('getprop("ro.boot.bootloader") != "%s",' % version)
-        info.script.AppendExtra('assert(exynos9611.mark_header_bt("/dev/block/by-name/bota", 0, 0, 0));')
+        info.script.AppendExtra('assert(exynos850.mark_header_bt("/dev/block/by-name/bota", 0, 0, 0));')
         for image in 'cm.bin', 'keystorage.bin', 'sboot.bin', 'uh.bin', 'up_param.bin':
           size = AddFirmwareImage(info, model, image, "/dev/block/by-name/bota", False, offset)
           if size > 0:
             numImages += 1
             offset += size + 36 # header size
-        info.script.AppendExtra('assert(exynos9611.mark_header_bt("/dev/block/by-name/bota", 0, %d, 3142939818));' % numImages)
+        info.script.AppendExtra('assert(exynos850.mark_header_bt("/dev/block/by-name/bota", 0, %d, 3142939818));' % numImages)
         AddFirmwareImage(info, model, "modem.bin", "/dev/block/by-name/radio", True)
         AddFirmwareImage(info, model, "modem_debug.bin", "/dev/block/by-name/cp_debug", True)
         info.script.AppendExtra(',"");')

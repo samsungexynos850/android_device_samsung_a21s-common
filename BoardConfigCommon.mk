@@ -13,13 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-COMMON_PATH := device/samsung/gta4xl-common
+COMMON_PATH := device/samsung/a21s-common
 
 ## Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 ## Inherit proprietary vendor configuartion
-include vendor/samsung/gta4xl-common/BoardConfigVendor.mk
+include vendor/samsung/a21s-common/BoardConfigVendor.mk
 
 ## Architecture
 TARGET_ARCH := arm64
@@ -84,7 +84,7 @@ endif
 endif
 
 ## DTB
-BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/exynos9611.cfg
+BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/exynos850.cfg
 
 ## DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -113,7 +113,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_NO_GCC := true
-TARGET_KERNEL_SOURCE := kernel/samsung/gta4xl
+TARGET_KERNEL_SOURCE := kernel/samsung/a21s
 
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
@@ -147,10 +147,10 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 
 ## Platform
 BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal9611
-TARGET_BOOTLOADER_BOARD_NAME := exynos9611
-TARGET_SOC := exynos9611
-include hardware/samsung_slsi-linaro/config/BoardConfig9611.mk
+TARGET_BOARD_PLATFORM := universal3830
+TARGET_BOOTLOADER_BOARD_NAME := exynos850
+TARGET_SOC := exynos850
+include hardware/samsung_slsi-linaro/config/BoardConfig850.mk
 
 ## Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
@@ -158,9 +158,9 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 ## Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_USES_FULL_RECOVERY_IMAGE := true
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9611
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos850
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_exynos9611
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_exynos850
 
 ## Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
