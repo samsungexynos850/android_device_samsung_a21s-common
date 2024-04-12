@@ -134,6 +134,9 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 55574528
 
 BOARD_USES_METADATA_PARTITION := true
 
+# system/core and build/make
+AB_OTA_UPDATER := false
+
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
 ## Platform
