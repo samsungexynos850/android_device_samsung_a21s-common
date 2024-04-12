@@ -41,6 +41,7 @@
     },
     {
         "repository": "android_kernel_samsung_exynos850",
-        "target_path": "kernel/samsung/universal3830"
+        "target_path": "kernel/samsung/universal3830",
+		"branch": "leaf-3.2"
     }
 ]
