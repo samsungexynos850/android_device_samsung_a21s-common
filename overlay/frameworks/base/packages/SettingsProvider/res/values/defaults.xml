@@ -21,5 +21,5 @@
     <bool name="def_accelerometer_rotation">true</bool>
 
     <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
-    <string name="def_device_name_simple">Galaxy Tab S6 Lite</string>
+    <string name="def_device_name_simple">Galaxy A21s</string>
 </resources>
