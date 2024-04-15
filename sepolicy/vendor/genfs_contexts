@@ -12,6 +12,7 @@ genfscon sysfs /devices/platform/panel/panel_drv/backlight/panel/max_brightness 
 genfscon sysfs /devices/platform/11500000.mali/dma_buf_gpu_mem                                                 u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/11500000.mali/total_gpu_mem                                                   u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/11500000.mali/kprcs                                                           u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13200000.usb/13200000.dwc3/udc/13200000.dwc3/current_speed                    u:object_r:sysfs_usb:s0
 genfscon sysfs /devices/platform/13900000.spi/spi_master/spi6/spi6.0/input/input0/enabled                      u:object_r:sysfs_touchscreen_writable:s0
 genfscon sysfs /devices/platform/13900000.spi/spi_master/spi6/spi6.0/input/input1/enabled                      u:object_r:sysfs_touchscreen_writable:s0
 genfscon sysfs /devices/platform/13840000.i2c/i2c-1/1-0049/sm5713-fuelgauge/power_supply/sm5713-fuelgauge/type u:object_r:sysfs_battery:s0

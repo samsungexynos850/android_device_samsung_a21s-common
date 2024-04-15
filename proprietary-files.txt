@@ -69,14 +69,9 @@ vendor/bin/hw/vendor.samsung.hardware.gnss@2.1-service
 vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 
-# GRAPICS_MALI
-vendor/lib/egl/libGLES_mali.so
-vendor/lib64/egl/libGLES_mali.so
-
-# HWC
-vendor/bin/hw/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service
-vendor/etc/init/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service.rc
-vendor/lib64/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
+## Graphics
+-vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1
+-vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1
 
 # ION
 vendor/lib/libion_exynos.so

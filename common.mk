@@ -21,18 +21,27 @@ $(call inherit-product, vendor/samsung/a21s-common/a21s-common-vendor.mk)
 
 PRODUCT_CHARACTERISTICS := phone
 
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Soong namespaces
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
-    android.hardware.audio@7.0-impl:32 \
+    android.hardware.audio@7.1-impl:32 \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
+    android.hardware.soundtrigger@2.3-impl \
     audio.bluetooth.default \
+    audio.primary.exynos9611 \
     audio.r_submix.default \
     audio.usb.default \
     libaudioroute \
     libtinyalsa \
-    libtinycompress
+    libtinycompress \
+    sound_trigger.primary.dummy
 
 PRODUCT_PACKAGES += \
     SamsungDAP
@@ -46,7 +55,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_stream_volumes.xml \
     $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(COMMON_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
+    $(COMMON_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    $(COMMON_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    $(COMMON_PATH)/configs/audio/mixer_paths_cs47l15.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_cs47l15.xml
 
 TARGET_EXCLUDES_AUDIOFX := true
 
@@ -62,7 +73,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.5-service_64 \
+    android.hardware.camera.provider@2.5-service_64.samsung \
     libsensorndkbridge
 
 PRODUCT_PACKAGES += \
@@ -87,6 +98,9 @@ PRODUCT_PACKAGES += \
     gralloc.exynos850 \
     libion
 
+PRODUCT_PACKAGES += \
+    libGrallocWrapper
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
@@ -110,6 +124,7 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor:64 \
     android.hardware.gnss@2.1.vendor:64
 
 # Graphics
@@ -147,6 +162,11 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
     libkeymaster4_1support.vendor:64
+
+PRODUCT_PACKAGES += \
+    libcrypto-tm \
+    libshim_crypto:64 \
+    libssl-tm
 
 # Lineage Health
 PRODUCT_PACKAGES += \
@@ -229,15 +249,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-3.9.1-vendorcompat
+
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4.vendor:64 \
-    android.hardware.radio.config@1.2.vendor:64 \
-    android.hardware.radio.deprecated@1.0.vendor:64
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -253,12 +271,12 @@ PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/samsung \
-    hardware/samsung/aidl/power-libperfmgr
+    hardware/samsung
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.samsung
+    android.hardware.thermal-service.samsung \
+    thermal_symlinks.samsung
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
@@ -269,12 +287,13 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.samsung
+    android.hardware.usb-service.samsung \
+    android.hardware.usb.gadget-service.samsung
 
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     hostapd \
     wpa_supplicant
 

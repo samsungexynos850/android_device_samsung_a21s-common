@@ -15,9 +15,6 @@
 
 COMMON_PATH := device/samsung/a21s-common
 
-## Include path
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
-
 ## Inherit proprietary vendor configuartion
 include vendor/samsung/a21s-common/BoardConfigVendor.mk
 
@@ -34,6 +31,9 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
+
+## Audio
+BOARD_LOW_LATENCY_CAPTURE_DURATION := 20
 
 ## Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
@@ -61,6 +61,9 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --board $(BOARD_BOOT_HEADER_NAME)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 
+## Camera
+$(call soong_config_set,samsungCameraVars,usage_64bit,true)
+
 ## Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 TARGET_SCREEN_DENSITY := 280
@@ -79,12 +82,7 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     product \
     odm
 
-ifneq ($(WITH_GMS),true)
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1258291200
-BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1258291200
-BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
-endif
+-include vendor/lineage/config/BoardConfigReservedSize.mk
 
 ## DTB
 BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/exynos850.cfg
@@ -103,7 +101,11 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
+TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+## Graphics
+TARGET_USES_VULKAN := true
 
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
@@ -114,17 +116,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/universal3830
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
-## Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/batt_slate_mode
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED := 0
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED := 1
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE := true
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE := false
-
 ## Manifest
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(COMMON_PATH)/device_framework_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
@@ -177,6 +171,9 @@ include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
+## USB
+$(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
 
 ## Verified Boot
 BOARD_AVB_ENABLE := true
