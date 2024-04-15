@@ -35,7 +35,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl \
     audio.bluetooth.default \
-    audio.primary.exynos9611 \
+    audio.primary.exynos850 \
     audio.r_submix.default \
     audio.usb.default \
     libaudioroute \
@@ -167,10 +167,6 @@ PRODUCT_PACKAGES += \
     libcrypto-tm \
     libshim_crypto:64 \
     libssl-tm
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_COPY_FILES += \
