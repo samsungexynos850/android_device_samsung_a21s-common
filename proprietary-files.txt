@@ -146,3 +146,10 @@ vendor/bin/hw/android.hardware.drm@1.4-service.widevine
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
 vendor/lib/libwvhidl.so
+
+### DRM
+vendor/lib/libdrmresource.so
+vendor/lib64/libdrmresource.so
+
+### AUDIO
+vendor/lib/libaudioparamupdate.so
