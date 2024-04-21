@@ -4687,14 +4687,6 @@ void proxy_set_incallmusic_rcv(void *proxy, bool state)
 }
 #endif
 
-#ifdef SEC_AUDIO_SUPPORT_PTT
-void  proxy_set_pttstatus(void *proxy, int status)
-{
-    // need to set up ptt after enable on 9830
-    return;
-}
-#endif
-
 #ifdef SEC_AUDIO_DUMP
 /******************************************************************************/
 /**                                                                          **/
