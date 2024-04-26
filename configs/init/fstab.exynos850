@@ -10,7 +10,7 @@ odm                                                     /odm                    
 /dev/block/platform/12100000.dwmmc0/by-name/boot        /boot                   emmc    defaults                                                                                recoveryonly
 /dev/block/platform/12100000.dwmmc0/by-name/recovery    /recovery               emmc    defaults                                                                                recoveryonly
 /dev/block/platform/12100000.dwmmc0/by-name/cache       /cache                  ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check
-/dev/block/platform/12100000.dwmmc0/by-name/userdata    /data                   f2fs    noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678 latemount,wait,check,fileencryption=aes-256-xts,quota,reservedsize=128M,checkpoint=fs,length=-20480
+/dev/block/platform/12100000.dwmmc0/by-name/userdata    /data                   f2fs    noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678 latemount,wait,check,quota,reservedsize=128M,checkpoint=fs,length=-20480
 /dev/block/platform/12100000.dwmmc0/by-name/efs         /mnt/vendor/efs         ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check
 /dev/block/platform/12100000.dwmmc0/by-name/cpefs       /mnt/vendor/cpefs       ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check,nofail
 /dev/block/platform/12100000.dwmmc0/by-name/misc        /misc                   emmc    defaults        defaults
