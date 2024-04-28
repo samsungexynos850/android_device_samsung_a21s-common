@@ -70,15 +70,15 @@ vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 
 ## Graphics
--vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1
--vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1
+-vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1;SYMLINK=vendor/lib/hw/vulkan.universal3830.so
+-vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1;SYMLINK=vendor/lib64/hw/vulkan.universal3830.so
 
 # ION
 vendor/lib/libion_exynos.so
 vendor/lib64/libion_exynos.so
 
 # KEYMASTER
-vendor/lib64/libkeymaster_helper.so
+-vendor/lib64/libkeymaster_helper.so
 -vendor/lib64/libskeymaster4device.so
 
 ### OMX

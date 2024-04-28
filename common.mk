@@ -41,10 +41,19 @@ PRODUCT_PACKAGES += \
     libaudioroute \
     libtinyalsa \
     libtinycompress \
-    sound_trigger.primary.dummy
+    sound_trigger.primary.dummy \
+	android.hardware.audio.sounddose-vendor-impl
+
+
 
 PRODUCT_PACKAGES += \
     SamsungDAP
+
+# Lights
+PRODUCT_PACKAGES += \
+	android.hardware.light@2.0-impl \
+	android.hardware.light@2.0-service \
+    android.hardware.light@2.0-service.samsung
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
