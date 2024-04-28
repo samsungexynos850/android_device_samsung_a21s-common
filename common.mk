@@ -82,7 +82,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.5-service_64.samsung \
+    android.hardware.camera.provider@2.5-service_64.exynos850 \
     libsensorndkbridge
 
 PRODUCT_PACKAGES += \
@@ -170,6 +170,7 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
+	android.hardware.keymaster@4.1.vendor \
     libkeymaster4_1support.vendor:64
 
 PRODUCT_PACKAGES += \
