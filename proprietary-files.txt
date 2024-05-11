@@ -139,7 +139,6 @@ vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
 -vendor/lib64/libwrappergps.so
 
 # Graphics
--vendor/bin/hw/android.hardware.graphics.allocator@2.0-service
 -vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc
 -vendor/lib/egl/libGLES_mali.so
 -vendor/lib/hw/android.hardware.graphics.allocator@2.0-impl.so
