@@ -1,4 +1,4 @@
-<manifest version="4.0" type="device" target-level="5">
+<manifest version="4.0" type="device" target-level="4">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -204,5 +204,5 @@
         <name>vendor.samsung_slsi.hardware.radio</name>
         <transport>hwbinder</transport>
     </hal>
-    <kernel target-level="5"/>
+    <kernel target-level="4"/>
 </manifest>
