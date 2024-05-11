@@ -7,6 +7,9 @@
 ## Common Path
 COMMON_PATH := device/samsung/exynos850-common
 
+# Include proprietary Configuration
+include vendor/samsung/exynos850-common/BoardConfigVendor.mk
+
 # Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -64,7 +67,6 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal3830
 TARGET_SOC := exynos850
-include hardware/samsung_slsi-linaro/config/BoardConfig850.mk
 
 # Properties
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
