@@ -20,7 +20,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio@2.0-impl:32 \
     android.hidl.allocator@1.0.vendor:32 \
-    audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -251,14 +250,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.frameworks.schedulerservice@1.0.vendor:64 \
     android.hardware.contexthub@1.0.vendor:64 \
-    android.hardware.sensors@2.1-service.samsung-multihal
-
-# Soong Namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/samsung/aidl/power-libperfmgr
+	android.hardware.sensors-service.samsung-multihal
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -266,7 +258,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service.samsung
+    android.hardware.usb-service.samsung \
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
@@ -282,6 +274,14 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     wpa_supplicant
+
+# Soong Namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(COMMON_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/samsung/aidl/power-libperfmgr \
+    hardware/samsung
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
