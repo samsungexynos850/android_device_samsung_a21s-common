@@ -1,2 +1,0 @@
-allow rild log_vendor_data_file:dir create_dir_perms;
-
