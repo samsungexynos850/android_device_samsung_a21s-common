@@ -90,6 +90,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 55574528
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal3830
 TARGET_SOC := exynos850
+include hardware/samsung_slsi-linaro/config/BoardConfig850.mk
 
 # Properties
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
