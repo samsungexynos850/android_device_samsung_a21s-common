@@ -191,6 +191,15 @@
             <instance>imsd2</instance>
         </interface>
     </hal>
+	<hal format="hidl">
+        <name>vendor.samsung_slsi.hardware.ExynosHWCServiceTW</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IExynosHWCServiceTW</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" override="true">
         <name>vendor.samsung_slsi.hardware.radio</name>
         <transport>hwbinder</transport>
