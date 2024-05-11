@@ -264,10 +264,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndservicemanager
 
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.exynos850
-
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay \
