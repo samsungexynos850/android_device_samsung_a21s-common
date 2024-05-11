@@ -43,7 +43,7 @@ vendor/firmware/calliope_sram_2.bin
 vendor/firmware/dax_param.bin
 
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
--product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+-system/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
 # Bluetooth Firmware
 vendor/etc/wifi/mx140_bt.hcf
@@ -55,7 +55,6 @@ vendor/etc/wifi/mx140_bt.hcf
 -vendor/lib64/hw/camera.exynos850.so
 -vendor/lib64/libexynoscamera_plugin.so
 -vendor/lib64/libremosaic_wrapper.so
--vendor/lib64/libsec2lsi_conversion.so
 
 # Camera dependencies
 -vendor/lib/libSEF.quram.so
@@ -260,10 +259,8 @@ vendor/etc/init/teegris_v4.rc
 # Sensors
 vendor/etc/sensors/hals.conf
 -vendor/lib/sensors.grip.so
--vendor/lib/sensors.inputvirtual.so
 -vendor/lib/sensors.sensorhub.so
 -vendor/lib64/sensors.grip.so
--vendor/lib64/sensors.inputvirtual.so
 -vendor/lib64/sensors.sensorhub.so
 
 # Widevine
