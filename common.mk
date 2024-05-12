@@ -111,8 +111,6 @@ PRODUCT_PACKAGES += \
 
 # init
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/fstab.exynos850.$(TARGET_DEVICE):$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos850 \
-    $(COMMON_PATH)/configs/init/fstab.exynos850.$(TARGET_DEVICE):$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos850 \
     $(COMMON_PATH)/configs/init/init.exynos850.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos850.rc \
     $(COMMON_PATH)/configs/init/init.exynos850.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos850.usb.rc \
     $(COMMON_PATH)/configs/init/init.recovery.exynos850.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos850.rc \
