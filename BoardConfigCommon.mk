@@ -66,12 +66,13 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --board $(BOARD_BOOT_HEADER_NAME)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
+BOARD_KERNEL_CMDLINE += androidboot.hardware=exynos850 androidboot.selinux=permissive loop.max_part=7
 
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_PATH := /home/thomas/toolchains/proton-clang
+TARGET_KERNEL_CLANG_PATH := /home/thomas/toolchains/gcc-4.9/clang/host/linux-x86/clang-r353983c
 
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
