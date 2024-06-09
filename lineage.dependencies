@@ -18,9 +18,5 @@
     {
         "repository": "android_hardware_samsung_slsi_scsc_wifibt_wpa_supplicant_lib",
         "target_path": "hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib"
-    },
-    {
-        "repository": "android_kernel_samsung_gta4xl",
-        "target_path": "kernel/samsung/gta4xl"
     }
 ]

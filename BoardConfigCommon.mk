@@ -13,13 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-COMMON_PATH := device/samsung/gta4xl-common
+COMMON_PATH := device/samsung/a21s-common
 
 ## Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 ## Inherit proprietary vendor configuartion
-include vendor/samsung/gta4xl-common/BoardConfigVendor.mk
+include vendor/samsung/a21s-common/BoardConfigVendor.mk
 
 ## Architecture
 TARGET_ARCH := arm64
@@ -100,7 +100,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/samsung/gta4xl
+TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
@@ -122,9 +122,9 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 
 ## Platform
 BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal9611
-TARGET_BOOTLOADER_BOARD_NAME := exynos9611
-TARGET_SOC := exynos9611
+TARGET_BOARD_PLATFORM := universal3830
+TARGET_BOOTLOADER_BOARD_NAME := exynos850
+TARGET_SOC := exynos850
 
 ## Properties
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop

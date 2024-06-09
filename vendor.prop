@@ -11,24 +11,67 @@ af.fast_track_multiplier=1
 ## Dalvik
 dalvik.vm.lockprof.threshold=500
 
-## FRP
-ro.frp.pst=/dev/block/persistent
+### KEYSTORE
+ro.hardware.keystore=mdfpp
+ro.security.keystore.keytype=sakv2,gak
 
 ## Graphics
 debug.sf.latch_unsignaled=1
+
+### DEVELOPER SETTINGS
+# Disable invocation of oem_lock
+ro.frp.pst=/dev/block/persistent
+
+### RIL
+vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+ro.vendor.epdg.support=true
+
+### SF
+ro.surface_flinger.vsync_event_phase_offset_ns=0
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=0
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.running_without_sync_framework=false
+
 ro.opengles.version=196610
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 ## Samsung specific
-ro.product_ship=true
 # Set csc support in OMX
 # If not set or set to 0, OMX will only use BT.601 colorspace.
 ro.vendor.cscsupported=1
 
+ro.product_ship=true
+ro.arch=exynos850
+ro.kernel.qemu=0
+ro.kernel.qemu.gles=2
+persist.demo.hdmirotationlock=false
+
 ## SoC
 ro.soc.manufacturer=Samsung
-ro.soc.model=Exynos 9611
+ro.soc.model=Exynos 850
 
 ## Wi-Fi
 wifi.direct.interface=p2p0
 ro.boot.wificountrycode=00
+
+# Set cmc properties
+ro.cmc.device_type=pd
+ro.cmc.version=2.0
+
+### CHARGER
+ro.charger.enable_suspend=true
+
+### LOCKSCREEN
+lockscreen.rot_override=true
+
+#Enable S.LSI USB settings
+dev.usbsetting.embedded=on
+
+#for DTV FullSeg SD Recording..
+oneseg.extSdCard.path=/storage/extSdCard
+
+# Set the sample rate for the BT device
+persist.bluetooth.samsung_samplerate.supported=true
+
+# Enable unspecialized app process pool
+persist.device_config.runtime_native.usap_pool_enabled=true

@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/gta4xl-common
+COMMON_PATH := device/samsung/a21s-common
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/gta4xl-common/gta4xl-common-vendor.mk)
+$(call inherit-product, vendor/samsung/a21s-common/a21s-common-vendor.mk)
 
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_CHARACTERISTICS := phone
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -110,7 +110,7 @@ PRODUCT_PACKAGES += \
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 400dpi
+PRODUCT_AAPT_PREF_CONFIG := 280dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Health

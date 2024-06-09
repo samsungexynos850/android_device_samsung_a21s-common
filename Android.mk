@@ -16,12 +16,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter gta4xlwifi gta4xl, $(TARGET_DEVICE)),)
+ifneq ($(filter a21s a21snsxx, $(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-EGL_LIBS := libGLES_mali.so libOpenCL.so libOpenCL.so.1 libOpenCL.so.1.1 hw/vulkan.universal9611.so
+EGL_LIBS := libGLES_mali.so libOpenCL.so libOpenCL.so.1 libOpenCL.so.1.1 hw/vulkan.universal3830.so
 
 EGL_32_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib/,$(EGL_LIBS))
 $(EGL_32_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
