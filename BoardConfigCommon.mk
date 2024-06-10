@@ -106,6 +106,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CONFIG := exynos850-a21snsxx_defconfig
 
 # system/core and build/make
 AB_OTA_UPDATER := false
