@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.audio@7.0-impl:32 \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl:32 \
+    android.hardware.bluetooth.audio@2.1 \
+    android.hardware.bluetooth.audio@2.1-impl:32 \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
@@ -50,7 +51,23 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     $(COMMON_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
-TARGET_EXCLUDES_AUDIOFX := true
+# NFC and Secure Element packages
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.samsung \
+    android.hardware.biometrics.face@1.0
+
+PRODUCT_PACKAGES += \
+    libtextclassifier_hash.vendor
+
+# VIB
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.samsung
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -65,18 +82,19 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.5-service_64 \
-    libsensorndkbridge
-
-# ConfigStore
-PRODUCT_PACKAGES += \
-    disable_configstore
+    libsensorndkbridge \
+    libcamera2ndk_vendor \
+    android.hardware.camera.provider@2.4 \
+    android.hardware.camera.provider@2.5 \
+    android.hardware.camera.provider@2.4-legacy \
+    android.hardware.camera.provider@2.5-legacy
 
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.2-service \
+    android.hardware.graphics.mapper@2.0-impl \
     android.hardware.graphics.mapper@2.0-impl-2.1
 
 PRODUCT_PACKAGES += \
@@ -242,7 +260,12 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.samsung
+	libgrallocusage.vendor \
+    android.frameworks.cameraservice.service@2.2.vendor \
+	android.frameworks.cameraservice.service@2.1.vendor \
+	android.frameworks.cameraservice.service@2.0.vendor \
+	android.hardware.thermal@1.0.vendor \
+    android.hardware.thermal@2.0.vendor
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json

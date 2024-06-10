@@ -63,6 +63,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+	<hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.thermal</name>
+        <version>1.0</version>
+        <interface>
+            <name>ISehThermal</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>android.system.wifi.keystore</name>
         <version>1.0</version>
