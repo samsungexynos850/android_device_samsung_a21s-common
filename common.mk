@@ -153,11 +153,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
     $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
-# Keylayout
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/idc/sec_e-pen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_e-pen.idc \
-    $(COMMON_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl
-
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
@@ -266,9 +261,6 @@ PRODUCT_PACKAGES += \
 	android.frameworks.cameraservice.service@2.0.vendor \
 	android.hardware.thermal@1.0.vendor \
     android.hardware.thermal@2.0.vendor
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # Touch HAL
 PRODUCT_PACKAGES += \
