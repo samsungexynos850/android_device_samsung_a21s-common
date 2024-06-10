@@ -107,6 +107,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 
+# system/core and build/make
+AB_OTA_UPDATER := false
+
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
