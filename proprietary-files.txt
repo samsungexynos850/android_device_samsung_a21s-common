@@ -43,7 +43,7 @@ vendor/firmware/calliope_sram_2.bin
 vendor/firmware/dax_param.bin
 
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
--system/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+-system/lib64/libaptX_encoder.so|6ebdf942fb9e31f3fbe7864303160e5942e301e4
 
 # Bluetooth Firmware
 vendor/etc/wifi/mx140_bt.hcf
@@ -55,6 +55,16 @@ vendor/etc/wifi/mx140_bt.hcf
 -vendor/lib64/hw/camera.exynos850.so
 -vendor/lib64/libexynoscamera_plugin.so
 -vendor/lib64/libremosaic_wrapper.so
+-vendor/lib/libGrallocMapperCamera.so
+-vendor/lib64/libGrallocMapperCamera.so
+
+#vendor/lib/vendor.samsung.hardware.camera.device@5.0-impl.so
+#vendor/lib/vendor.samsung.hardware.camera.device@5.0.so
+#vendor/lib64/vendor.samsung.hardware.camera.device@5.0-impl.so
+#vendor/lib64/vendor.samsung.hardware.camera.device@5.0.so
+#system/lib64/vendor.samsung.hardware.camera.device@5.0.so
+#vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service_64
+
 
 # Camera dependencies
 -vendor/lib/libSEF.quram.so
@@ -132,15 +142,16 @@ vendor/firmware/txse2.bin
 # GPS
 vendor/bin/hw/gps.sh
 -vendor/bin/hw/gpsd
--vendor/bin/hw/vendor.samsung.hardware.gnss@2.1-service
 vendor/etc/gnss/gps.cfg
 vendor/etc/init/init.gps.rc
-vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
--vendor/lib64/hw/android.hardware.gnss@2.1-impl.so
--vendor/lib64/hw/vendor.samsung.hardware.gnss@2.1-impl.so
--vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
--vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
 -vendor/lib64/libwrappergps.so
+
+-vendor/lib64/hw/vendor.samsung.hardware.gnss@2.1-impl.so
+-vendor/lib64/hw/android.hardware.gnss@2.1-impl.so
+vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
+vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
+vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
+vendor/bin/hw/vendor.samsung.hardware.gnss@2.1-service
 
 # Graphics
 -vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc
@@ -273,18 +284,71 @@ vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
 # Wi-Fi
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_slsi.rc
-vendor/etc/wifi/hydra_config.sdb
-vendor/etc/wifi/indoorchannel.info
+vendor/etc/wlan_common_rc
+vendor/etc/wlan_vendor_rc
 vendor/etc/wifi/mx140.bin
-vendor/etc/wifi/mx140_t.bin
-vendor/etc/wifi/mx140_t_wlan.hcf
-vendor/etc/wifi/mx140_t_wlan_t.hcf
-vendor/etc/wifi/mx140_wlan.hcf
 vendor/etc/wifi/mx140_wlan_sw.hcf
-vendor/etc/wifi/mx140_wlan_t.hcf
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/peri_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/pmu_peri_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/mb_wlbt2abox_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/mb_shub2wlbt_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/rf_chip_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/pmu_conf_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/mb_apm2wlbt_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/vic0_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/cortexR4.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/moredump.bin
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/moredump.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/mb_ap2wlbt_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/mb_cp2wlbt_registers.xml
+vendor/etc/wifi/mx140_t/debug/hardware/moredump/mb_wlbt2gnss_registers.xml
+vendor/etc/wifi/mx140_t/debug/wlan/id.txt
+vendor/etc/wifi/mx140_t/debug/wlan/unitab.dbg
+vendor/etc/wifi/mx140_t/debug/wlan/hydra_config.sdb
+vendor/etc/wifi/mx140_t/debug/wlan/hip_signals.xml
+vendor/etc/wifi/mx140_t/debug/wlan/symbols.dbg
+vendor/etc/wifi/mx140_t/debug/wlan/xide_mib.dbg
+vendor/etc/wifi/mx140_t/debug/wlan/mib_out.xml
+vendor/etc/wifi/mx140_t/debug/wlan/univif.dbg
+vendor/etc/wifi/mx140_t/debug/wlan/unicli.dbg
+vendor/etc/wifi/mx140_t/debug/common/log-strings.bin
+vendor/etc/wifi/mx140/debug/hardware/moredump/peri_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/pmu_peri_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/mb_wlbt2abox_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/mb_shub2wlbt_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/rf_chip_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/pmu_conf_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/mb_apm2wlbt_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/vic0_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/cortexR4.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/moredump.bin
+vendor/etc/wifi/mx140/debug/hardware/moredump/moredump.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/mb_ap2wlbt_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/mb_cp2wlbt_registers.xml
+vendor/etc/wifi/mx140/debug/hardware/moredump/mb_wlbt2gnss_registers.xml
+vendor/etc/wifi/mx140/debug/wlan/id.txt
+vendor/etc/wifi/mx140/debug/wlan/unitab.dbg
+vendor/etc/wifi/mx140/debug/wlan/hydra_config.sdb
+vendor/etc/wifi/mx140/debug/wlan/hip_signals.xml
+vendor/etc/wifi/mx140/debug/wlan/symbols.dbg
+vendor/etc/wifi/mx140/debug/wlan/xide_mib.dbg
+vendor/etc/wifi/mx140/debug/wlan/mib_out.xml
+vendor/etc/wifi/mx140/debug/wlan/univif.dbg
+vendor/etc/wifi/mx140/debug/wlan/unicli.dbg
+vendor/etc/wifi/mx140/debug/common/log-strings.bin
+vendor/etc/wifi/hydra_config.sdb
 vendor/etc/wifi/mx140_wlan_t_sw.hcf
-vendor/etc/wifi/platform.txt
 vendor/etc/wifi/slsi_reg_database.bin
+vendor/etc/wifi/mx140_t.bin
+vendor/etc/wifi/mx140_bt.hcf
+vendor/etc/wifi/mx140_common.hcf
+vendor/etc/wifi/mx140_wlan_t.hcf
+vendor/etc/wifi/platform.txt
+vendor/etc/wifi/mx
+vendor/etc/wifi/mx140_t_wlan.hcf
+vendor/etc/wifi/mx140_wlan.hcf
+vendor/etc/wifi/indoorchannel.info
+vendor/etc/wifi/mx140_t_wlan_t.hcf
 
 # Missing deps
 
@@ -303,3 +367,41 @@ system/system/lib64/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 
 # OMX
 vendor/etc/seccomp_policy/mediacodec.policy
+
+# Camera Provider
+#vendor/etc/init/vendor.samsung.hardware.camera.provider@4.0-service_64.rc
+#vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service_64
+#-vendor/lib/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
+#vendor/lib/vendor.samsung.hardware.camera.provider@4.0.so
+#vendor/lib/vendor.samsung.hardware.camera.provider@4.0-legacy.so
+#-vendor/lib64/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
+#vendor/lib64/vendor.samsung.hardware.camera.provider@4.0.so
+#vendor/lib64/vendor.samsung.hardware.camera.provider@4.0-legacy.so
+
+
+# Wifi vendor attempt
+vendor/lib64/vendor.samsung.hardware.wifi.hostapd@4.0.so
+vendor/lib64/vendor.samsung.hardware.wifi.supplicant@3.0.so
+vendor/lib64/vendor.samsung.hardware.wifi.supplicant@3.1.so
+vendor/lib64/vendor.samsung.hardware.wifi@2.0.so
+vendor/lib64/vendor.samsung.hardware.wifi@2.1.so
+vendor/lib64/vendor.samsung.hardware.wifi@2.2.so
+
+vendor/etc/init/vendor.samsung.hardware.wifi@2.0-service.rc
+vendor/bin/hw/vendor.samsung.hardware.wifi@2.0-service
+
+system/lib/android.hardware.wifi.hostapd@1.0.so
+system/lib/android.hardware.wifi.hostapd@1.1.so
+system/lib/android.hardware.wifi.hostapd@1.2.so
+system/lib/android.hardware.wifi.hostapd@1.3.so
+system/lib/android.hardware.wifi.supplicant@1.0.so
+system/lib/vendor.samsung.hardware.wifi.hostapd@3.0.so
+system/lib/vendor.samsung.hardware.wifi.hostapd@4.0.so
+system/lib64/android.hardware.wifi.hostapd@1.0.so
+system/lib64/android.hardware.wifi.hostapd@1.1.so
+system/lib64/android.hardware.wifi.hostapd@1.2.so
+system/lib64/android.hardware.wifi.hostapd@1.3.so
+system/lib64/android.hardware.wifi.supplicant@1.0.so
+system/lib64/vendor.samsung.hardware.wifi.hostapd@3.0.so
+system/lib64/vendor.samsung.hardware.wifi.hostapd@4.0.so
+

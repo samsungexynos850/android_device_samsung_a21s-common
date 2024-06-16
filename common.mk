@@ -23,11 +23,13 @@ PRODUCT_CHARACTERISTICS := phone
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@7.0-impl:32 \
-    android.hardware.audio@7.0-impl:32 \
+    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.audio@6.0-impl:32 \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.1 \
-    android.hardware.bluetooth.audio@2.1-impl:32 \
+    android.hardware.bluetooth.audio@2.0 \
+    android.hidl.allocator@1.0.vendor:32 \
+    android.hardware.bluetooth.audio@2.0-impl:32 \
+    android.hardware.bluetooth.a2dp@1.0 \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
@@ -39,9 +41,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungDAP
 
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images_vendor
+
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration_7_0.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
+	frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
+	frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_configuration.xml \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_default_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_default_stream_volumes.xml \
@@ -59,15 +69,15 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.samsung \
-    android.hardware.biometrics.face@1.0
+    android.hardware.biometrics.fingerprint@2.3-service.samsung
 
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
 
 # VIB
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.samsung
+    android.hardware.vibrator-service.samsung \
+	android.hardware.vibrator@1.3.vendor
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -80,14 +90,22 @@ PRODUCT_COPY_FILES += \
     hardware/samsung_slsi/libbt/conf/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf \
     $(COMMON_PATH)/configs/sysconfig/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
+# # Camera
+# PRODUCT_PACKAGES += \
+#     libsensorndkbridge \
+#     libcamera2ndk_vendor \
+#     android.hardware.camera.provider@2.4 \
+#     android.hardware.camera.provider@2.5 \
+# 	android.hardware.camera.provider@2.6 \
+# 	android.hardware.camera.provider@2.6.vendor \
+#     android.hardware.camera.provider@2.4-legacy \
+#     android.hardware.camera.provider@2.5-legacy \
+# 	android.hardware.camera.device@3.6.vendor
+
 # Camera
 PRODUCT_PACKAGES += \
-    libsensorndkbridge \
-    libcamera2ndk_vendor \
-    android.hardware.camera.provider@2.4 \
-    android.hardware.camera.provider@2.5 \
-    android.hardware.camera.provider@2.4-legacy \
-    android.hardware.camera.provider@2.5-legacy
+    android.hardware.camera.provider@2.5-service_64.exynos850 \
+    libsensorndkbridge
 
 # Display
 PRODUCT_PACKAGES += \
@@ -123,7 +141,9 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1.vendor:64
+    android.hardware.gnss@2.1.vendor:64 \
+	android.hardware.gnss@2.1.vendor-impl \
+	android.hardware.gnss@2.1-impl
 
 # Graphics
 # Device uses high-density artwork where available
@@ -156,7 +176,8 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
-    libkeymaster4_1support.vendor:64
+    android.hardware.keymaster@4.1.vendor \
+    libkeymaster4_1support.vendor
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -274,6 +295,14 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/samsung/aidl/power-libperfmgr
 
+
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay \
+    AvoidAppsInCutoutOverlay
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_hide_display_cutout=true
+
 # Thermal
 PRODUCT_PACKAGES += \
 	libgrallocusage.vendor \
@@ -289,7 +318,9 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service.exynos850
+    android.hardware.usb@1.3-service.samsung \
+	android.hardware.usb@1.3-impl \
+	android.hardware.usb@1.3.vendor
 
 # WiFi
 PRODUCT_PACKAGES += \
