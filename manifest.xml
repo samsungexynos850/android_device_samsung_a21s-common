@@ -181,36 +181,6 @@
 		<fqname>@2.2::ISehRadio/slot2</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi</name>
-        <transport>hwbinder</transport>
-        <version>2.2</version>
-        <interface>
-            <name>ISehWifi</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.2::ISehWifi/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi.hostapd</name>
-        <transport>hwbinder</transport>
-        <version>4.0</version>
-        <interface>
-            <name>ISehHostapd</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@4.0::ISehHostapd/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi.supplicant</name>
-        <transport>hwbinder</transport>
-        <version>3.1</version>
-        <interface>
-            <name>ISehSupplicant</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@3.1::ISehSupplicant/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.radio.bridge</name>
         <transport>hwbinder</transport>
         <version>2.0</version>

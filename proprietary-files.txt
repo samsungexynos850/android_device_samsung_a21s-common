@@ -58,14 +58,6 @@ vendor/etc/wifi/mx140_bt.hcf
 -vendor/lib/libGrallocMapperCamera.so
 -vendor/lib64/libGrallocMapperCamera.so
 
-#vendor/lib/vendor.samsung.hardware.camera.device@5.0-impl.so
-#vendor/lib/vendor.samsung.hardware.camera.device@5.0.so
-#vendor/lib64/vendor.samsung.hardware.camera.device@5.0-impl.so
-#vendor/lib64/vendor.samsung.hardware.camera.device@5.0.so
-#system/lib64/vendor.samsung.hardware.camera.device@5.0.so
-#vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service_64
-
-
 # Camera dependencies
 -vendor/lib/libSEF.quram.so
 -vendor/lib/libacryl.so
@@ -367,41 +359,3 @@ system/system/lib64/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 
 # OMX
 vendor/etc/seccomp_policy/mediacodec.policy
-
-# Camera Provider
-#vendor/etc/init/vendor.samsung.hardware.camera.provider@4.0-service_64.rc
-#vendor/bin/hw/vendor.samsung.hardware.camera.provider@4.0-service_64
-#-vendor/lib/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
-#vendor/lib/vendor.samsung.hardware.camera.provider@4.0.so
-#vendor/lib/vendor.samsung.hardware.camera.provider@4.0-legacy.so
-#-vendor/lib64/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
-#vendor/lib64/vendor.samsung.hardware.camera.provider@4.0.so
-#vendor/lib64/vendor.samsung.hardware.camera.provider@4.0-legacy.so
-
-
-# Wifi vendor attempt
-vendor/lib64/vendor.samsung.hardware.wifi.hostapd@4.0.so
-vendor/lib64/vendor.samsung.hardware.wifi.supplicant@3.0.so
-vendor/lib64/vendor.samsung.hardware.wifi.supplicant@3.1.so
-vendor/lib64/vendor.samsung.hardware.wifi@2.0.so
-vendor/lib64/vendor.samsung.hardware.wifi@2.1.so
-vendor/lib64/vendor.samsung.hardware.wifi@2.2.so
-
-vendor/etc/init/vendor.samsung.hardware.wifi@2.0-service.rc
-vendor/bin/hw/vendor.samsung.hardware.wifi@2.0-service
-
-system/lib/android.hardware.wifi.hostapd@1.0.so
-system/lib/android.hardware.wifi.hostapd@1.1.so
-system/lib/android.hardware.wifi.hostapd@1.2.so
-system/lib/android.hardware.wifi.hostapd@1.3.so
-system/lib/android.hardware.wifi.supplicant@1.0.so
-system/lib/vendor.samsung.hardware.wifi.hostapd@3.0.so
-system/lib/vendor.samsung.hardware.wifi.hostapd@4.0.so
-system/lib64/android.hardware.wifi.hostapd@1.0.so
-system/lib64/android.hardware.wifi.hostapd@1.1.so
-system/lib64/android.hardware.wifi.hostapd@1.2.so
-system/lib64/android.hardware.wifi.hostapd@1.3.so
-system/lib64/android.hardware.wifi.supplicant@1.0.so
-system/lib64/vendor.samsung.hardware.wifi.hostapd@3.0.so
-system/lib64/vendor.samsung.hardware.wifi.hostapd@4.0.so
-
