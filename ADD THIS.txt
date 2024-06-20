@@ -1,0 +1,11 @@
+add this at your kernel Thomas 
+
+git clone https://github.com/dorimanx/exfat-nofuse.git
+
+cp -r exfat-nofuse/* kernel/your_device/fs/exfat
+
+in your defconf add it
+
+CONFIG_EXFAT_FS=m
+
+

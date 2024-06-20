@@ -33,7 +33,7 @@
     <bool name="config_wifiSoftapResetHiddenConfig">false</bool>
     <bool name="config_wifiSoftapResetMaxClientSettingConfig">false</bool>
     <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
-    <bool name="config_wifi5ghzSupport">true</bool>
+    <bool name="config_wifi5ghzSupport">false</bool>
     <integer name="config_wifiHardwareSoftapMaxClientCount">10</integer>
     <string name="config_wifiSoftap2gChannelList" translatable="false">1-11</string>
     <string name="config_wifiSoftap5gChannelList" translatable="false">149</string>
