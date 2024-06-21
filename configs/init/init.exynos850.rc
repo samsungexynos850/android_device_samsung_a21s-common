@@ -278,13 +278,21 @@ on post-fs-data
     chmod 0660 /mnt/vendor/efs/bluetooth/bt_addr
 
 # for WIFI MAC address
-    mkdir /mnt/vendor/efs/wifi 0775 wifi root
-    chown wifi root /mnt/vendor/efs/wifi/.mac.info
-    chmod 0664 /mnt/vendor/efs/wifi/.mac.info
-    chown wifi root /mnt/vendor/efs/wifi/.mac.cob
-    chmod 0664 /mnt/vendor/efs/wifi/.mac.cob
+    # Setup Wi-Fi permissions
+    mkdir /data/vendor/wifi 0770 wifi system
+    mkdir /data/vendor/wifi/wpa 0770 wifi system
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/vendor/wifi/hostapd/sockets 0770 wifi wifi
+    mkdir /vendor/etc/wifi 0770 system system
+    mkdir /data/vendor/log/wifi 0770 wifi wifi
+    chown wifi wifi /sys/wifi/memdump
 
-    # write /sys/module/scsc_mx/parameters/disable_recovery_handling 0
+
+# for WIFI TRP/TIS
+    chown wifi wifi /data/vendor/conn/.psm.info
+    chmod 0640 /data/vendor/conn/.psm.info
+
+    write /sys/class/net/wlan0/queues/rx-0/rps_cpus fe
 
 # Samsung Pay
 #    mkdir /efs/pfw_data 0760 vendor_spay vendor_spay
@@ -329,6 +337,9 @@ on boot
     chown system system /sys/devices/system/cpu/cpu5/online
     chown system system /sys/devices/system/cpu/cpu6/online
     chown system system /sys/devices/system/cpu/cpu7/online
+
+    # wifi
+    setprop wifi.interface wlan0
 
     # RTC reset status (bigdata)
     chown system system /sys/power/rtc_status

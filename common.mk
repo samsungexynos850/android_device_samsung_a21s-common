@@ -29,7 +29,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0 \
     android.hidl.allocator@1.0.vendor:32 \
     android.hardware.bluetooth.audio@2.0-impl:32 \
-    android.hardware.bluetooth.a2dp@1.0 \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
@@ -63,6 +62,7 @@ PRODUCT_COPY_FILES += \
 
 # NFC and Secure Element packages
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service.samsung \
     com.android.nfc_extras \
     NfcNci \
     Tag
