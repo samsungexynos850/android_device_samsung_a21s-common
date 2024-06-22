@@ -39,7 +39,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     SamsungDAP
-
+    
+PRODUCT_PACKAGES += \
+    exfat-utils
+    
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager

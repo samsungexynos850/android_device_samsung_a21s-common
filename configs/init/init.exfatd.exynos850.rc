@@ -1,0 +1,7 @@
+# Mount exFAT
+service exfatd /system/bin/exfatd
+    class core
+    user root
+    group root
+    oneshot
+    seclabel u:r:su:s0
