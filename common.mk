@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0.vendor:32 \
     android.hardware.bluetooth.audio@2.0-impl:32 \
     audio.a2dp.default \
+    android.hardware.bluetooth.a2dp@1.0 \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
