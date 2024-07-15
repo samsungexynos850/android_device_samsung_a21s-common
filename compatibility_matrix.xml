@@ -7,6 +7,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.boot</name>
+        <fqname>IBootControl/default</fqname>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.vibrator</name>
+        <fqname>IVibratorManager/default</fqname>
+    </hal>
     <hal format="hidl" optional="true">
         <name>android.frameworks.schedulerservice</name>
         <version>1.0</version>

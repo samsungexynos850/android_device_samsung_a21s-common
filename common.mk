@@ -23,23 +23,31 @@ PRODUCT_CHARACTERISTICS := phone
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@6.0-impl:32 \
-    android.hardware.audio@6.0-impl:32 \
+    android.hardware.audio.effect@7.0-impl:32 \
+    android.hardware.audio@7.0-impl:32 \
+    android.hardware.soundtrigger@2.0-impl:32 \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio@2.0 \
     android.hidl.allocator@1.0.vendor:32 \
     android.hardware.bluetooth.audio@2.0-impl:32 \
     audio.a2dp.default \
-    android.hardware.bluetooth.a2dp@1.0 \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
     libaudioroute \
     libtinyalsa \
-    libtinycompress
+    libtinycompress \
+    libaptXHD_encoder
+
+# A2DP
+PRODUCT_PACKAGES += \
+  liba2dpoffload \
+  android.hardware.bluetooth.a2dp@1.0-impl \
+  android.hardware.bluetooth.a2dp@1.0-service
 
 PRODUCT_PACKAGES += \
-    SamsungDAP
+    SamsungDAP \
+    Camera2
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
