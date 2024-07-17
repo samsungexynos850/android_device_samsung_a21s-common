@@ -18,15 +18,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.soundtrigger</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISoundTriggerHw</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.media.omx</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -196,6 +187,36 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::IVibrator/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.wifi</name>
+        <transport>hwbinder</transport>
+        <version>2.2</version>
+        <interface>
+            <name>ISehWifi</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.2::ISehWifi/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.wifi.hostapd</name>
+        <transport>hwbinder</transport>
+        <version>4.0</version>
+        <interface>
+            <name>ISehHostapd</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@4.0::ISehHostapd/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.wifi.supplicant</name>
+        <transport>hwbinder</transport>
+        <version>3.1</version>
+        <interface>
+            <name>ISehSupplicant</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@3.1::ISehSupplicant/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.camera.provider</name>
