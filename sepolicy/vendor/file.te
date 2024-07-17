@@ -33,3 +33,4 @@ type sysfs_decon_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_gpu_memory, sysfs_type, r_fs_type, fs_type;
 type sysfs_net_mtu_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
+type vendor_sysfs_graphics, sysfs_type, fs_type;
