@@ -776,3 +776,9 @@ on post-fs
     chown root system /spu/sensorhub
     chown root system /spu/sensorhub/shub_spu.bin
     write /sys/class/sensors/ssp_sensor/fs_ready 1
+
+service copy_mps_code /system/bin/sh -c "cp /mnt/vendor/efs/mps_code.dat /efs/imei/mps_code.dat"
+    class late_start
+    user root
+    group root
+    oneshot
