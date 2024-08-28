@@ -57,13 +57,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 ## Camera
 $(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
-
-# Camera
-SOONG_CONFIG_NAMESPACES += samsungCameraVars
-SOONG_CONFIG_samsungCameraVars += extra_ids
-# ID=52 is depth camera
-# ID=54 is macro
-SOONG_CONFIG_samsungCameraVars_extra_ids := 52,54
+$(call soong_config_set,samsungCameraVars,extra_ids,52,54) # ID=52 is depth camera and ID=54 is macro
 
 ## Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
