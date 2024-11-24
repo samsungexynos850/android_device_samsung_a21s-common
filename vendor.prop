@@ -16,18 +16,26 @@ ro.frp.pst=/dev/block/persistent
 
 ## Graphics
 debug.sf.latch_unsignaled=1
+ro.hardware.vulkan=mali
 ro.opengles.version=196610
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
+# IncrementalFS
+ro.incremental.enable=true
+
 ## Samsung specific
-ro.product_ship=true
 # Set csc support in OMX
 # If not set or set to 0, OMX will only use BT.601 colorspace.
 ro.vendor.cscsupported=1
 
+# RIL
+ro.product_ship=true
+ro.telephony.default_network=9,9
+vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+
 ## SoC
 ro.soc.manufacturer=Samsung
-ro.soc.model=Exynos 9611
+ro.soc.model=Exynos 850
 
 ## Wi-Fi
 wifi.direct.interface=p2p0
