@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2021 The LineageOS Project
+# Copyright (C) 2020-2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,27 +13,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-COMMON_PATH := device/samsung/gta4xl-common
+COMMON_PATH := device/samsung/a21s-common
 
 ## Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 ## Inherit proprietary vendor configuartion
-include vendor/samsung/gta4xl-common/BoardConfigVendor.mk
+include vendor/samsung/a21s-common/BoardConfigVendor.mk
 
 ## Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := generic
 
 ## Architecture (Secondary)
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := generic
 
 ## Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
@@ -49,6 +48,7 @@ BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_TAGS_OFFSET := 0x00000100
+BOARD_KERNEL_SECOND_OFFSET := 0xf0000000
 
 BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
@@ -57,6 +57,8 @@ BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
+BOARD_KERNEL_CMDLINE += androidboot.hardware=exynos850 androidboot.selinux=enforcing loop.max_part=7
 
 ## Display
 TARGET_SCREEN_DENSITY := 240
@@ -100,7 +102,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/samsung/gta4xl
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
@@ -122,9 +125,9 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 
 ## Platform
 BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal9611
-TARGET_BOOTLOADER_BOARD_NAME := exynos9611
-TARGET_SOC := exynos9611
+TARGET_BOARD_PLATFORM := universal3830
+TARGET_BOOTLOADER_BOARD_NAME := exynos850
+TARGET_SOC := exynos3830
 
 ## Properties
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
@@ -132,7 +135,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 ## Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9611
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos850
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 
 ## Releasetools
