@@ -101,6 +101,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 
+# A/B
+AB_OTA_UPDATER := false
+
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
