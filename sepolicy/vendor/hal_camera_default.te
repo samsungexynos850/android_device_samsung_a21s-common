@@ -1,21 +1,21 @@
-vndbinder_use(hal_camera_default);
-
-binder_call(hal_camera_default, system_server);
-binder_call(system_server, hal_camera_default);
-
-allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
-
-allow hal_camera_default hal_graphics_composer_default:fd use;
-
 r_dir_file(hal_camera_default, sysfs_camera);
 allow hal_camera_default sysfs_camera_writable:file rw_file_perms;
 
-allow hal_camera_default camera_vendor_data_file:dir search;
-allow hal_camera_default camera_vendor_data_file:file rw_file_perms;
+get_prop(hal_camera_default, exported_camera_prop);
+
+allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
+allow hal_camera_default sysfs_mem_boost_writable:file rw_file_perms;
 
 r_dir_file(hal_camera_default, sysfs_battery);
+r_dir_file(hal_camera_default, sysfs_sensors);
 
-get_prop(hal_camera_default, exported_camera_prop);
+binder_call(hal_camera_default, system_server);
+
+allow system_server hal_camera_default:binder call;
+allow hal_camera_default hal_graphics_composer_default:fd use;
+allow hal_camera_default gpu_device:chr_file rw_file_perms;
+allow hal_camera_default caminfo_device:chr_file { ioctl open read write };
+
+r_dir_file(hal_camera_default, app_efs_file);
+
 set_prop(hal_camera_default, vendor_camera_prop);
-
-dontaudit hal_camera_default default_prop:file read;

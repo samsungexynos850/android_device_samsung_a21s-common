@@ -1,8 +1,12 @@
+allow init boot_block_device:lnk_file relabelto;
+allow init dtbo_block_device:lnk_file relabelto;
 allow init efs_file:dir mounton;
 allow init mnt_vendor_file:dir mounton;
-
-allow init tmpfs:lnk_file create;
-
-allow init kernel:system module_request;
-
 allow init socket_device:sock_file { create setattr unlink };
+allow init kernel:system module_request;
+allow init servicemanager:binder { call transfer };
+allow init system_server:binder call;
+allow init sysfs_vibrator:file { open setattr write };
+allow init init:capability { sys_nice };
+allow init shell_exec:file { execute open read };
+allow init tmpfs:lnk_file create;

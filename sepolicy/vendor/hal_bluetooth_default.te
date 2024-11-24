@@ -1,0 +1,3 @@
+set_prop(hal_bluetooth_default, vendor_bluetooth_prop);
+allow hal_bluetooth_default bt_device:chr_file { getattr open read };
+allow hal_bluetooth_default bluetooth_address:file write;
