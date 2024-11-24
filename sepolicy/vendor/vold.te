@@ -1,2 +1,1 @@
-allow vold efs_file:dir r_file_perms;
-allow vold mnt_vendor_file:dir r_file_perms;
+allow vold efs_file:dir rw_dir_perms;
