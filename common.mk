@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2021 The LineageOS Project
+# Copyright (C) 2020-2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/gta4xl-common
+COMMON_PATH := device/samsung/a21s-common
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/gta4xl-common/gta4xl-common-vendor.mk)
+$(call inherit-product, vendor/samsung/a21s-common/a21s-common-vendor.mk)
 
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_CHARACTERISTICS := phone
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -110,7 +110,7 @@ PRODUCT_PACKAGES += \
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 400dpi
+PRODUCT_AAPT_PREF_CONFIG := 280dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Health
@@ -127,18 +127,13 @@ PRODUCT_PACKAGES += \
 
 # init
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/fstab.exynos9611:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos9611 \
-    $(COMMON_PATH)/configs/init/fstab.exynos9611:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos9611 \
-    $(COMMON_PATH)/configs/init/init.exynos9611.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9611.rc \
-    $(COMMON_PATH)/configs/init/init.exynos9611.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos9611.usb.rc \
-    $(COMMON_PATH)/configs/init/init.recovery.exynos9611.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9611.rc \
+    $(COMMON_PATH)/configs/init/fstab.exynos850:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos850 \
+    $(COMMON_PATH)/configs/init/fstab.exynos850:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos850 \
+    $(COMMON_PATH)/configs/init/init.exynos850.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos850.rc \
+    $(COMMON_PATH)/configs/init/init.exynos850.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos850.usb.rc \
+    $(COMMON_PATH)/configs/init/init.recovery.exynos850.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos850.rc \
     $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
     $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
-
-# Keylayout
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/idc/sec_e-pen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_e-pen.idc \
-    $(COMMON_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl
 
 # Keymaster
 PRODUCT_PACKAGES += \
