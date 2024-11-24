@@ -1,1 +1,3 @@
+allow cbd radio_device:chr_file rw_file_perms;
 allow cbd self:capability2 block_suspend;
+allow cbd vendor_radio_prop:file { getattr map open read };

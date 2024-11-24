@@ -1,1 +1,2 @@
 allow system_server self:capability sys_module;
+allow system_server zygote_tmpfs:file rw_file_perms;
