@@ -248,6 +248,10 @@ on post-fs-data
     chown system radio /sys/class/camera/rear/rear3_moduleid
     chown system radio /sys/class/camera/rear/rear3_tilt
 
+    # Access permission for input_suspend
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+
 # Permission for flashlight control for HAL3.3
 # The Istor espresso board does not have the flash led h/w, So the below permission line are blocked.
 # If you want to test the flashlight in universal board which have the flash led h/w, Enable the below blocked lines.
