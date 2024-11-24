@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 LineageOS
+ * Copyright (C) 2020-2024 LineageOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 
 #pragma push_macro("PROPERTY_VALUE_MAX")
 
-#define BTM_DEF_LOCAL_NAME "Galaxy Tab S6 Lite"
+#define BTM_DEF_LOCAL_NAME "Galaxy A21s"
 
 /*
  * Toggles support for vendor specific extensions such as RPA offloading,
