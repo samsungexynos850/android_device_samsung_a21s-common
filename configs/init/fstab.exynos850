@@ -3,8 +3,6 @@ vendor                                                  /vendor                 
 product                                                 /product                ext4    ro,errors=panic         wait,logical,first_stage_mount
 odm                                                     /odm                    ext4    ro,errors=panic         wait,logical,first_stage_mount
 
-/dev/block/by-name/prism       /prism                  ext4    ro,barrier=1            nofail,first_stage_mount
-/dev/block/by-name/optics      /optics                 ext4    ro,barrier=1            nofail,first_stage_mount
 /dev/block/by-name/metadata    /metadata               ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,first_stage_mount,formattable,check
 /dev/block/by-name/boot        /boot                   emmc    defaults                                                                                recoveryonly
 /dev/block/by-name/recovery    /recovery               emmc    defaults                                                                                recoveryonly
@@ -13,8 +11,6 @@ odm                                                     /odm                    
 /dev/block/by-name/efs         /mnt/vendor/efs         ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check
 /dev/block/by-name/misc        /misc                   emmc    defaults        defaults
 /dev/block/by-name/vbmeta      /vbmeta                 emmc    defaults        first_stage_mount
-/dev/block/by-name/keydata     /keydata                ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check,nofail
-/dev/block/by-name/keyrefuge   /keyrefuge              ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check,nofail
 
 /devices/platform/13500000.dwmmc2/mmc_host/*            auto                    auto    defaults        voldmanaged=sdcard:auto
 /devices/platform/13600000.usb*                         auto                    auto    defaults        voldmanaged=usb:auto
