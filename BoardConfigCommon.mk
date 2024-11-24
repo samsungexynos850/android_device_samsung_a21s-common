@@ -61,7 +61,7 @@ BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_KERNEL_CMDLINE += androidboot.hardware=exynos850 androidboot.selinux=enforcing loop.max_part=7
 
 ## Display
-TARGET_SCREEN_DENSITY := 240
+TARGET_SCREEN_DENSITY := 280
 
 ## Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 5536481280
