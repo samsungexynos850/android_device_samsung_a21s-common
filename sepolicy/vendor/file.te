@@ -20,7 +20,6 @@ type sysfs_decon, sysfs_type, r_fs_type, fs_type;
 type sysfs_decon_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_displayport_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ems_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_gpu_memory, sysfs_type, r_fs_type, fs_type;
 type sysfs_gpu_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_input_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_int_writable, sysfs_type, rw_fs_type, fs_type;
