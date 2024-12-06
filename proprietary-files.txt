@@ -67,9 +67,6 @@ vendor/firmware/calliope_sram.bin
 vendor/firmware/calliope_sram_2.bin
 vendor/firmware/dax_param.bin
 
-# Bluetooth (aptX) - from crosshatch - QP1A.190711.020
--system/lib64/libaptX_encoder.so|6ebdf942fb9e31f3fbe7864303160e5942e301e4
-
 # Bluetooth Firmware
 vendor/etc/wifi/mx140_bt.hcf
 
