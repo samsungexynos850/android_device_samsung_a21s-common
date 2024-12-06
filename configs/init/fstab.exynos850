@@ -7,6 +7,7 @@ odm                                                     /odm                    
 
 /dev/block/by-name/boot                                 /boot                   emmc    defaults                                                                                recoveryonly
 /dev/block/by-name/recovery                             /recovery               emmc    defaults                                                                                recoveryonly
+/dev/block/by-name/vbmeta                               /vbmeta                 emmc    defaults                                                                                first_stage_mount
 /dev/block/by-name/cache                                /cache                  ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check
 /dev/block/by-name/userdata                             /data                   f2fs    noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678 latemount,wait,check,fileencryption=aes-256-xts,quota,reservedsize=128M,checkpoint=fs,length=-20480
 /dev/block/by-name/efs                                  /mnt/vendor/efs         ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check
