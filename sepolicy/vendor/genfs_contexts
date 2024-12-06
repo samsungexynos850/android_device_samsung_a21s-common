@@ -1,4 +1,7 @@
 # Devices
+genfscon sysfs /devices/platform/11500000.mali/dma_buf_gpu_mem                                                             u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/11500000.mali/total_gpu_mem                                                               u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/11500000.mali/kprcs                                                                       u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/10000.mif_pdata/sim/ds_detect                                                             u:object_r:sysfs_sim_writable:s0
 genfscon sysfs /devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value                                            u:object_r:sysfs_gps_writable:s0
 genfscon sysfs /devices/platform/104b0000.hsi2c/i2c-4/4-0048/input/input2/enabled                                          u:object_r:sysfs_touchscreen_writable:s0
@@ -71,10 +74,9 @@ genfscon sysfs /devices/platform/12c80000.mfc/video4linux/video11/name          
 genfscon sysfs /kernel/ems/emstune/req_mode                                                                                u:object_r:sysfs_ems_writable:s0
 
 # GPU
-genfscon sysfs /kernel/gpu/gpu_freq_table                                                                                  u:object_r:sysfs_gpu:s0
-genfscon sysfs /kernel/gpu/gpu_max_clock                                                                                   u:object_r:sysfs_gpu_writable:s0
-genfscon sysfs /kernel/gpu/gpu_memory                                                                                      u:object_r:sysfs_gpu_memory:s0
-genfscon sysfs /kernel/gpu/gpu_min_clock                                                                                   u:object_r:sysfs_gpu_writable:s0
+genfscon sysfs /kernel/gpu/gpu_freq_table                                                                               u:object_r:sysfs_gpu:s0
+genfscon sysfs /kernel/gpu/gpu_max_clock                                                                                u:object_r:sysfs_gpu_writable:s0
+genfscon sysfs /kernel/gpu/gpu_min_clock                                                                                u:object_r:sysfs_gpu_writable:s0
 
 # Kernel
 genfscon sysfs /kernel/mm/vmscan/am_app_launch                                                                             u:object_r:sysfs_app_launch_writable:s0
