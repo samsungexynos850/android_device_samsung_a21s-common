@@ -206,10 +206,6 @@ vendor/etc/gnss/gps.debug.cfg
 -vendor/lib64/libkeymaster_helper.so
 -vendor/lib64/libskeymaster4device.so
 
-# Memtrack
--vendor/lib64/hw/memtrack.exynos850.so
--vendor/lib/hw/memtrack.exynos850.so
-
 # OMX
 -vendor/lib/libstagefright_soft_gsmdec.so
 -vendor/lib/libstagefrighthw.so
