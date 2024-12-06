@@ -2,6 +2,10 @@
 /dev/scsc_h4_0                                                                                            u:object_r:bt_device:s0
 /sys/module/scsc_bt/parameters/bluetooth_address                                                          u:object_r:bluetooth_address:s0
 
+# Block
+/sys/devices/platform/(.*)/block/sda/queue/discard_max_bytes  u:object_r:sysfs_block_writable:s0
+/sys/devices/platform/(.*)/block/mmcblk0/mmcblk0p[0-9]+/start u:object_r:sysfs_block:s0
+
 # Camera
 /dev/m2m1shot_scaler0                                                                                     u:object_r:m2m1shot_device:s0
 /dev/caminfo                                                                                              u:object_r:caminfo_device:s0
