@@ -5,3 +5,6 @@ allow gpsd sysfs_wake_lock:file { open write };
 allow gpsd gnss_device:chr_file { ioctl open read write };
 allow gpsd bootanim_system_prop:file { getattr map open read };
 allow gpsd system_data_file:dir { search };
+
+binder_call(gpsd, servicemanager)
+
