@@ -377,6 +377,8 @@ on boot
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/restricted/cpus 0-3
 
+    setprop vendor.powerhal.init 1
+
     # Cstate node
     chown system system /sys/power/cstate_control
     chmod 0664 /sys/power/cstate_control
