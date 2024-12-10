@@ -1,13 +1,5 @@
 <?xml version="2.0" encoding="UTF-8"?>
 <compatibility-matrix version="2.0" type="framework">
-    <hal format="hidl" override="true">
-        <name>android.hardware.radio</name>
-        <version>1.2</version>
-        <interface>
-            <name>ISap</name>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
 	<hal format="hidl" optional="true">
         <name>vendor.samsung.hardware.nfc</name>
         <version>2.0</version>
@@ -23,38 +15,6 @@
         <interface>
             <name>ISehGnss</name>
             <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.radio</name>
-        <transport>hwbinder</transport>
-		<version>2.2</version>
-        <interface>
-            <name>ISehRadio</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.radio.bridge</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehBridge</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.radio.channel</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehChannel</name>
-            <instance>epdgd</instance>
-            <instance>epdgd2</instance>
-            <instance>imsd</instance>
-            <instance>imsd2</instance>
         </interface>
     </hal>
 </compatibility-matrix>

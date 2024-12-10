@@ -104,14 +104,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-       <name>android.hardware.power.stats</name>
-       <transport>hwbinder</transport>
-       <interface>
-           <name>IPowerStats</name>
-           <instance>default</instance>
-       </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.gnss</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
