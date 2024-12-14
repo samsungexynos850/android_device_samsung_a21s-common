@@ -236,10 +236,10 @@ vendor/firmware/is_lib.bin
 vendor/firmware/is_rta.bin
 
 # RIL
--vendor/bin/hw/rild
+-vendor/bin/cass
 -vendor/bin/cbd
+vendor/etc/init/cass.rc
 vendor/etc/init/init.baseband.rc
-vendor/etc/init/init.vendor.rilchip.rc
 vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_attaio.bin
@@ -247,20 +247,36 @@ vendor/etc/plmn_delta_hktw.bin
 vendor/etc/plmn_delta_usagsm.bin
 vendor/etc/plmn_se13.bin
 -vendor/lib/libaudio-ril.so
--vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos850
--vendor/lib/libsemnativecarrierfeature.so
 -vendor/lib64/libengmode_client.so
--vendor/lib64/libril_sem.so
--vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos850
--vendor/lib64/libsec-ril.so
--vendor/lib64/libsemnativecarrierfeature.so
 -vendor/lib64/libvkmanager_vendor.so
--vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
--vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
--vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
--vendor/lib64/vendor.samsung.hardware.radio@2.0.so
--vendor/lib64/vendor.samsung.hardware.radio@2.1.so
--vendor/lib64/vendor.samsung.hardware.radio@2.2.so
+
+## RIL - from a14 - A145FXXS8CXJ2
+-vendor/bin/hw/rild|006374bbdd818b1d6ee83617ddabbf4073974e0e
+vendor/etc/init/vendor.samsung.rilchip.slsi.rc|95aa52333814b340e5064eae3a9bd5cb8a96a3ff
+-vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml|c3f8ea3f6228f2d572081b0c0ae29a251de4350b
+-vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml|e9cdde9d05c5cce32f76bbb164437f43b3288157
+-vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml|ebbe359a9b2d78cb88debe79d9183c039afb7c01
+-vendor/lib/libsemnativecarrierfeature.so|5758f3076a314d5dde595037ee33840fe61de52d
+-vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos850|3f8c4703d57869a05fe00ad21fb61643aac6a656
+-vendor/lib64/libSemDataProps.so|86a95ebb35d80cc1ec2bdd0f80601787f1ef88ba
+-vendor/lib64/libSemTelephonyProps.so|659466f18732155cbf308c14924135f2e65a3f48
+-vendor/lib64/libprotobuf-cpp-full-21.7.so|92fd1090bd6aa2d00d4ae4e721f48a6e601b67d5
+-vendor/lib64/libril_sem.so|d5032186f98c1ca5b619cab3bb944c6539fffd99
+-vendor/lib64/libsec-ril.so|5f71c524cb5a34bb800c4340fd5cd6b6ad7841c8|b04c31880ac2b762732c33127e7e4299ba696a64
+-vendor/lib64/libsemnativecarrierfeature.so|fd821eb580a1f57b60cc483169da891376cbbb12
+-vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos850|cbde0c49fd7812229ef92cabec5d28e331a8cc13
+-vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so|669709f8ff7d3435592c518ad0ba087f42b65606
+-vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so|a324420e0ecab5f08c606f28eb233b68792072c7
+-vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so|e44c75cf85ac8f286cce8877544e2df0403579e2
+-vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so|9d4b2dddfe22574fabc94231fc47d6a7ec99fcd1
+-vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so|23184bdd3a38b864a17cabcd771ee7347da31495
+-vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so|f89b327cf692da0aba6d4304592b52766b736e24
+
+## VaultKeeper
+-vendor/bin/vaultkeeperd
+vendor/etc/init/vaultkeeper_common.rc
+-vendor/lib64/libstork_shared.so
+-vendor/lib64/libvkservice.so
 
 # SECNATIVE
 -vendor/lib/libsecnativefeature.so
