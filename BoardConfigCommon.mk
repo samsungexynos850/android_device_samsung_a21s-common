@@ -63,6 +63,9 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_KERNEL_CMDLINE += androidboot.hardware=exynos850 androidboot.selinux=enforcing loop.max_part=7
 
+## Camera
+$(call soong_config_set,samsungCameraVars,usage_64bit,true)
+
 ## Display
 TARGET_SCREEN_DENSITY := 280
 
