@@ -68,7 +68,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider-service.samsung \
     libsensorndkbridge \
     libion.vendor \
-    libutilscallstack.vendor
+    libutilscallstack.vendor \
+    libexpat.vendor
 
 # Charger
 PRODUCT_PACKAGES += \
