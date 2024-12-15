@@ -204,7 +204,7 @@ vendor/etc/gnss/gps.debug.cfg
 -vendor/lib64/libskeymaster4device.so
 
 # OMX
--vendor/lib/libstagefright_soft_gsmdec.so
+-vendor/lib/libstagefright_soft_gsmdec.so;MODULE_SUFFIX=_vendor
 -vendor/lib/libstagefrighthw.so
 -vendor/lib/libExynosOMX_Core.so
 -vendor/lib/libExynosOMX_Resourcemanager.so
@@ -323,6 +323,7 @@ vendor/etc/sensors/hals.conf
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
 -vendor/lib/libwvhidl.so
+-vendor/lib/liboemcrypto.so
 
 # Wi-Fi
 vendor/etc/init/wifi.rc
