@@ -17,6 +17,10 @@
 # Data Files
 /data/vendor/mediadrm(/.*)?                                                                               u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/nfc(/.*)?                                                                                    u:object_r:nfc_vendor_data_file:s0
+/data/nfc(/.*)?                                                                                           u:object_r:nfc_data_file:s0
+
+# MMC RPMB
+/dev/mmcblk0rpmb                                                                                          u:object_r:mmc_rpmb_char_device:s0
 
 # Devices
 /dev/block/platform/.+/by-name/radio2                                                                     u:object_r:radio_block_device:s0
@@ -30,6 +34,7 @@
 /efs/sec_efs(/.*)?                                                                                        u:object_r:sec_efs_file:s0
 /efs/ssm(/.*)?                                                                                            u:object_r:ssm_efs_file:s0
 /efs/usb_hw_param(/.*)?                                                                                   u:object_r:sec_efs_file:s0
+/mnt/vendor/efs/wv.keys                                                                                   u:object_r:mnt_vendor_file:s0
 
 # Fingerprint
 /dev/goodix_fp                                                                                            u:object_r:fp_sensor_device:s0
@@ -71,7 +76,7 @@
 /sys/devices/platform/samsung_mobile_device/samsung_mobile_device:[a-z0-9]+/wakeup/                       u:object_r:sysfs_wakeup:s0
 
 # Wakeup
-/sys/devices/platform/(.*)/wakeup[0-9]*(/.*)?                 u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/(.*)/wakeup[0-9]*(/.*)?                                                             u:object_r:sysfs_wakeup:s0
 
 # ZRAM
 /dev/block/zram0                                                                                          u:object_r:swap_block_device:s0
