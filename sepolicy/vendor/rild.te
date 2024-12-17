@@ -1,4 +1,7 @@
 allow rild log_vendor_data_file:dir create_dir_perms;
 
+allow rild cass:dir search;
+allow rild cass:file { getattr open read };
+
 dontaudit rild default_prop:file read;
 dontaudit rild system_prop:file read;
