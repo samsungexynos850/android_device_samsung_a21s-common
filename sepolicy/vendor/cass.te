@@ -1,0 +1,2 @@
+allow cass rild:unix_stream_socket connectto;
+
