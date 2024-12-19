@@ -16,4 +16,4 @@ odm                                                     /odm                    
 /devices/platform/13500000.dwmmc2/mmc_host/*            auto                    auto    defaults        voldmanaged=sdcard:auto,encryptable=userdata
 /devices/platform/13600000.usb*                         auto                    auto    defaults        voldmanaged=usb:auto
 
-/dev/block/zram0                                        none                    swap    defaults        zramsize=2147483648,max_comp_streams=8,zram_loopback_path=/data/per_boot/zram_swap,zram_loopback_size=512M
+/dev/block/zram0                                        none                    swap    defaults        zramsize=2147483648,max_comp_streams=8
