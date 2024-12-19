@@ -20,79 +20,6 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds.  Do not translate. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
-         The N entries of this array define N + 1 control points as follows:
-         (1-based arrays)
-         Point 1:            (0, value[1]):             lux <= 0
-         Point 2:     (level[1], value[2]):  0        < lux <= level[1]
-         Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
-         ...
-         Point N+1: (level[N], value[N+1]):  level[N] < lux
-         The control points must be strictly increasing.  Each control point
-         corresponds to an entry in the brightness backlight values arrays.
-         For example, if lux == level[1] (first element of the levels array)
-         then the brightness will be determined by value[2] (second element
-         of the brightness values array).
-         Spline interpolation is used to determine the auto-brightness
-         backlight values for lux levels between these control points.
-         Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>3</item>
-        <item>5</item>
-        <item>7</item>
-        <item>50</item>
-        <item>100</item>
-        <item>258</item>
-        <item>338</item>
-        <item>433</item>
-        <item>487</item>
-        <item>575</item>
-        <item>700</item>
-        <item>810</item>
-        <item>920</item>
-        <item>1100</item>
-        <item>1275</item>
-        <item>1470</item>
-    </integer-array>
-
-    <!-- Array of output values for LCD backlight corresponding to the lux values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>4</item>
-        <item>23</item>
-        <item>56</item>
-        <item>102</item>
-        <item>124</item>
-        <item>149</item>
-        <item>162</item>
-        <item>175</item>
-        <item>185</item>
-        <item>194</item>
-        <item>205</item>
-        <item>215</item>
-        <item>220</item>
-        <item>225</item>
-        <item>237</item>
-        <item>255</item>
-        <item>306</item>
-    </integer-array>
-    
-    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
-         for debouncing the light sensor.  Different constants are used to debounce the light sensor
-         when adapting to brighter or darker environments.  This parameter controls how quickly
-         brightness changes occur in response to an observed change in light level that exceeds the
-         hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">6000</integer>
-    
-    <!-- Flag indicating whether we should enable the automatic brightness.
-         Software implementation will be used if config_hardware_auto_brightness_available is not set -->
-    <!--- TBD: Enable this when we have Camera Light Sensor Service available for this device. -->
-    <bool name="config_automatic_brightness_available">true</bool>
-
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
     
@@ -128,10 +55,6 @@
     
     <!-- Flag specifying whether VT is available on device -->
     <bool name="config_device_vt_available">true</bool>
-    
-    <!-- The type of the light sensor to be used by the display framework for things like
-         auto-brightness. If unset, then it just gets the default sensor of type TYPE_LIGHT. -->
-    <string name="config_displayLightSensorType">android.sensor.light</string>
     
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
          app standby.  These are not enabled by default because they require a standard
@@ -265,15 +188,6 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
-
-    <!-- Minimum allowable screen brightness to use in a very dark room.
-         This value sets the floor for the darkest possible auto-brightness
-         adjustment. It is expected to be somewhat less than the first entry in
-         config_autoBrightnessLcdBacklightValues so as to allow the user to have
-         some range of adjustment to dim the screen further than usual in very
-         dark rooms. The contents of the screen must still be clearly visible
-         in darkness (although they may not be visible in a bright room). -->
-    <integer name="config_screenBrightnessDark">1</integer>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
