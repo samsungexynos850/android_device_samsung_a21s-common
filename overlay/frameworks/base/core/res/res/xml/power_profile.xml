@@ -120,6 +120,5 @@
         <value>865000</value>
         <value>1001000</value>
     </array>
-    <item name="battery.capacity">4900</item>
-    <item name="battery.typical.capacity">5000</item>
+    <item name="battery.capacity">5000</item>
 </device>
