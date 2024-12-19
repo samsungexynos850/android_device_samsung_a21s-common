@@ -175,9 +175,9 @@ vendor/etc/gnss/deleteLogCommands
 vendor/etc/gnss/gps.debug.cfg
 
 # Graphics
--vendor/lib/egl/libGLES_mali.so
+-vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1;SYMLINK=vendor/lib/hw/vulkan.universal3830.so
 -vendor/lib/libion_exynos.so
--vendor/lib64/egl/libGLES_mali.so
+-vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1;SYMLINK=vendor/lib64/hw/vulkan.universal3830.so
 -vendor/lib64/libion_exynos.so
 
 # HWC
