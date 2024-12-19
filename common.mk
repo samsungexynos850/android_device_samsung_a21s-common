@@ -31,7 +31,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudioroute \
-    libtinyalsa \
     libtinycompress \
     libprocessgroup.vendor \
     libstagefright_softomx_plugin.vendor
