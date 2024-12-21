@@ -128,7 +128,7 @@ vendor/etc/media_profiles_V1_0.xml
 -vendor/lib64/libqfp_sensortest.so
 -vendor/lib64/libsynaFpSensorTestNwd.so
 
-## Gralloc
+# Gralloc
 -vendor/lib/hw/gralloc.exynos850.so
 -vendor/lib64/hw/gralloc.exynos850.so
 
@@ -177,8 +177,10 @@ vendor/etc/gnss/gps.debug.cfg
 # Graphics
 -vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1;SYMLINK=vendor/lib/hw/vulkan.universal3830.so
 -vendor/lib/libion_exynos.so
+-vendor/lib/hw/vulkan.mali.so
 -vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1;SYMLINK=vendor/lib64/hw/vulkan.universal3830.so
 -vendor/lib64/libion_exynos.so
+-vendor/lib64/hw/vulkan.mali.so
 
 # HWC
 -vendor/lib64/hw/hwcomposer.exynos850.so
@@ -340,16 +342,6 @@ vendor/etc/wifi/mx140_wlan_t.hcf
 vendor/etc/wifi/mx140_wlan_t_sw.hcf
 vendor/etc/wifi/platform.txt
 vendor/etc/wifi/slsi_reg_database.bin
-
-# Missing dependencies
-vendor/lib/libhypervintf.so
-vendor/lib64/libhypervintf.so
-system/system/lib/libhypervintf.so
-system/system/lib64/libhypervintf.so
-vendor/lib/vendor.samsung.hardware.hyper-V2-ndk_platform.so
-vendor/lib64/vendor.samsung.hardware.hyper-V2-ndk_platform.so
-system/system/lib/vendor.samsung.hardware.hyper-V2-ndk_platform.so
-system/system/lib64/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 
 # Swap file
 vendor/etc/fstab.ramplus
