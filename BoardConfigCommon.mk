@@ -67,6 +67,7 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=exynos850 androidboot.selinux=enfor
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
 ## Display
+BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 TARGET_SCREEN_DENSITY := 280
 
 ## Dynamic Partitions
@@ -132,7 +133,8 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal3830
 TARGET_BOOTLOADER_BOARD_NAME := exynos850
-TARGET_SOC := exynos850
+TARGET_SOC := exynos3830
+include hardware/samsung_slsi-linaro/config/BoardConfig850.mk
 
 ## DTB
 BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_SOC).cfg
