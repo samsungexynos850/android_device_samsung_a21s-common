@@ -201,8 +201,6 @@ PRODUCT_PACKAGES += \
     libOMX.Exynos.MPEG4.Encoder \
     libOMX.Exynos.VP8.Decoder \
     libOMX.Exynos.VP8.Encoder \
-    libOMX.Exynos.VP9.Decoder \
-    libOMX.Exynos.VP9.Encoder \
     libOMX.Exynos.WMV.Decoder
 
 # Overlays
