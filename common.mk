@@ -97,7 +97,7 @@ PRODUCT_PACKAGES += \
     libshim_ui
 
 PRODUCT_PACKAGES += \
-    libdrm.vendor:64
+    libdrm.vendor
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
