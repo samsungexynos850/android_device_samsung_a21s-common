@@ -70,7 +70,9 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge \
     libion.vendor \
     libutilscallstack.vendor \
-    libexpat.vendor
+    libexpat.vendor \
+    libcamera_metadata \
+    libcamera_metadata.vendor
 
 # Charger
 PRODUCT_PACKAGES += \
