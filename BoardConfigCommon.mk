@@ -66,6 +66,13 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=exynos850 androidboot.selinux=enfor
 ## Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
+# Camera
+SOONG_CONFIG_NAMESPACES += samsungCameraVars
+SOONG_CONFIG_samsungCameraVars += extra_ids
+# ID=52 is depth camera
+# ID=54 is macro
+SOONG_CONFIG_samsungCameraVars_extra_ids := 52,54
+
 ## Display
 TARGET_SCREEN_DENSITY := 280
 
