@@ -2,6 +2,7 @@
 genfscon sysfs /devices/platform/11500000.mali/dma_buf_gpu_mem                                                             u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/11500000.mali/total_gpu_mem                                                               u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/11500000.mali/kprcs                                                                       u:object_r:sysfs_gpu:s0
+genfscon sysfs /sys/devices/platform/13600000.usb/13600000.dwc3/udc/13600000.dwc3/current_speed                            u:object_r:sysfs_usb:s0
 genfscon sysfs /devices/platform/10000.mif_pdata/sim/ds_detect                                                             u:object_r:sysfs_sim_writable:s0
 genfscon sysfs /devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value                                            u:object_r:sysfs_gps_writable:s0
 genfscon sysfs /devices/platform/104b0000.hsi2c/i2c-4/4-0048/input/input2/enabled                                          u:object_r:sysfs_touchscreen_writable:s0
