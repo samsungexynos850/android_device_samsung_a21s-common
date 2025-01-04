@@ -36,4 +36,5 @@
     <integer name="config_wifiHardwareSoftapMaxClientCount">10</integer>
     <string name="config_wifiSoftap2gChannelList" translatable="false">1-11</string>
     <string name="config_wifiSoftap5gChannelList" translatable="false">149</string>
+    <bool translatable="false" name="config_wifiDriverSupportedNl80211RegChangedEvent">false</bool>
 </resources>
