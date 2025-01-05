@@ -209,6 +209,7 @@ vendor/etc/gnss/gps.debug.cfg
 -vendor/lib/omx/libOMX.Exynos.HEVC.Encoder.so
 -vendor/lib64/omx/libOMX.Exynos.HEVC.Decoder.so
 -vendor/lib64/omx/libOMX.Exynos.HEVC.Encoder.so
+vendor/etc/seccomp_policy/mediacodec.policy
 
 # OMX - from gta4xlwifi - lineage-21.0-20241228-nightly-gta4xlwifi-signed.zip
 -vendor/lib/libstagefrighthw.so|7a4207e1c947f4850f1d5fc1e392576cabb53661
