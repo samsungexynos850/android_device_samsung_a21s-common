@@ -77,7 +77,6 @@ genfscon sysfs /kernel/ems/emstune/req_mode                                     
 # GPU
 genfscon sysfs /kernel/gpu/gpu_freq_table                                                                               u:object_r:sysfs_gpu:s0
 genfscon sysfs /kernel/gpu/gpu_max_clock                                                                                u:object_r:sysfs_gpu_writable:s0
-genfscon sysfs /kernel/gpu/gpu_min_clock                                                                                u:object_r:sysfs_gpu_writable:s0
 
 # Kernel
 genfscon sysfs /kernel/mm/vmscan/am_app_launch                                                                             u:object_r:sysfs_app_launch_writable:s0
