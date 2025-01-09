@@ -10,5 +10,5 @@ allow init sysfs_vibrator:file { open setattr write };
 allow init init:capability { sys_nice };
 allow init shell_exec:file { execute open read };
 allow init tmpfs:lnk_file create;
-allow init sysfs_block_writable:file rw_file_perms;
+allow init sysfs_gps:file setattr;
 

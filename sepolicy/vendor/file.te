@@ -30,4 +30,4 @@ type sysfs_mif_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_mem_boost_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
 type sysfs_mmc_host, fs_type, sysfs_type;
-
+type sysfs_gps, fs_type, sysfs_type, mlstrustedobject;
