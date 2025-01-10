@@ -111,34 +111,6 @@
             ],
             "DefaultIndex": 0,
             "ResetOnInit": false
-        },
-        {
-            "Name": "PowerHALMainState",
-            "Path": "vendor.powerhal.state",
-            "Values": [
-                "CAMERA_STREAMING_MID",
-                "SUSTAINED_PERFORMANCE",
-                ""
-            ],
-            "Type": "Property"
-        },
-        {
-            "Name": "PowerHALAudioState",
-            "Path": "vendor.powerhal.audio",
-            "Values": [
-                "AUDIO_STREAMING_LOW_LATENCY",
-                ""
-            ],
-            "Type": "Property"
-        },
-        {
-            "Name": "PowerHALRenderingState",
-            "Path": "vendor.powerhal.rendering",
-            "Values": [
-                "EXPENSIVE_RENDERING",
-                ""
-            ],
-            "Type": "Property"
         }
     ],
     "Actions": [
@@ -171,12 +143,6 @@
             "Node": "LowPowerProximity",
             "Duration": 0,
             "Value": "dummy_func,0"
-        },
-        {
-            "PowerHint": "SUSTAINED_PERFORMANCE",
-            "Node": "PowerHALMainState",
-            "Duration": 0,
-            "Value": "SUSTAINED_PERFORMANCE"
         },
         {
             "PowerHint": "SUSTAINED_PERFORMANCE",
@@ -246,12 +212,6 @@
         },
         {
             "PowerHint": "CAMERA_STREAMING_MID",
-            "Node": "PowerHALMainState",
-            "Duration": 0,
-            "Value": "CAMERA_STREAMING_MID"
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING_MID",
             "Node": "EMSTUNE_REQMODE",
             "Duration": 0,
             "Value": "2"
@@ -288,21 +248,9 @@
         },
         {
             "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-            "Node": "PowerHALAudioState",
-            "Duration": 0,
-            "Value": "AUDIO_STREAMING_LOW_LATENCY"
-        },
-        {
-            "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
             "Node": "LPMDisable",
             "Duration": 0,
             "Value": "1"
-        },
-        {
-            "PowerHint": "EXPENSIVE_RENDERING",
-            "Node": "PowerHALRenderingState",
-            "Duration": 0,
-            "Value": "EXPENSIVE_RENDERING"
         },
         {
             "PowerHint": "EXPENSIVE_RENDERING",
