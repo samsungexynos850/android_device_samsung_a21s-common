@@ -92,7 +92,6 @@ vendor/etc/wifi/mx140_bt.hcf
 -vendor/lib/libsensorlistener.so
 -vendor/lib/libuniapi.so
 -vendor/lib/libuniplugin.so
--vendor/lib/vendor.samsung.hardware.thermal@1.0.so
 -vendor/lib64/libSEF.quram.so
 -vendor/lib64/libcsc.so
 -vendor/lib64/libexynoscamera3.so
@@ -103,7 +102,6 @@ vendor/etc/wifi/mx140_bt.hcf
 -vendor/lib64/libsensorlistener.so
 -vendor/lib64/libuniapi.so
 -vendor/lib64/libuniplugin.so
--vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
 -vendor/etc/btcon.json
 
 # Charger Firmware
@@ -348,3 +346,15 @@ vendor/etc/wifi/slsi_reg_database.bin
 # Swap file
 vendor/etc/fstab.ramplus
 vendor/etc/init/init.ramplus.rc
+
+### THERMAL
+vendor/bin/hw/vendor.samsung.hardware.thermal@1.0-service
+vendor/etc/init/vendor.samsung.hardware.thermal@1.0-service.rc
+-vendor/etc/vintf/manifest/vendor.samsung.hardware.thermal@1.0-manifest.xml
+-vendor/lib/vendor.samsung.hardware.thermal@1.0.so
+-vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
+-vendor/lib/libhypervintf.so
+-vendor/lib64/libhypervintf.so
+-vendor/lib/vendor.samsung.hardware.hyper-V2-ndk_platform.so
+-vendor/lib64/vendor.samsung.hardware.hyper-V2-ndk_platform.so
+
