@@ -34,6 +34,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
+## Board
+TARGET_BOARD_INFO_FILE := $(COMMON_PATH)/board-info.txt
+
 ## Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
 
@@ -157,6 +160,7 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos850
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
 ## Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_exynos850
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 ## RIL

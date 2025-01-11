@@ -17,8 +17,16 @@
 import common
 import re
 
+def FullOTA_Assertions(info):
+  OTA_Assertions(info)
+  return
+
 def FullOTA_InstallEnd(info):
   OTA_InstallEnd(info)
+  return
+
+def IncrementalOTA_Assertions(info):
+  OTA_Assertions(info)
   return
 
 def IncrementalOTA_InstallEnd(info):
@@ -30,6 +38,15 @@ def AddImage(info, basename, dest):
   data = info.input_zip.read("IMAGES/" + basename)
   common.ZipWriteStr(info.output_zip, name, data)
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest))
+
+def OTA_Assertions(info):
+  android_info = info.input_zip.read("OTA/android-info.txt").decode("utf-8")
+  m = re.search(r'require\s+version-bootloader-min\s*=\s*(\S+)', android_info)
+  if m:
+    bootloader_version = m.group(1)
+    cmd = ('assert(exynos850.verify_bootloader_min("{}") == "1" || abort("ERROR: This package requires binary C based firmware. Please upgrade firmware and retry!"););').format(bootloader_version)
+    info.script.AppendExtra(cmd)
+  return
 
 def PrintInfo(info, dest):
   info.script.Print("Patching {} image unconditionally...".format(dest.split('/')[-1]))
