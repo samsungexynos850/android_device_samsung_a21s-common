@@ -1076,35 +1076,6 @@ on boot
     # Firmware CUSTOMIZED_PATH
     chown system radio /sys/module/firmware_class/parameters/path
 
-    # Permissions for Touchscreen
-    chown system radio /sys/class/sec/tsp/cmd
-    chown system system /sys/class/sec/tsp/input/enabled
-    chmod 0660 /sys/class/sec/tsp/input/enabled
-    chown system system /sys/class/sec/tsp/enabled
-    chmod 0660 /sys/class/sec/tsp/enabled
-    chown root system /proc/tsp_msg
-    chmod 0440 /proc/tsp_msg
-    chown system radio /sys/class/sec/tsp/pressure_enable
-    chown system system /sys/class/sec/tsp/multi_count
-    chown system system /sys/class/sec/tsp/wet_mode
-    chown system system /sys/class/sec/tsp/noise_mode
-    chown system system /sys/class/sec/tsp/comm_err_count
-    chown system system /sys/class/sec/tsp/checksum
-    chown system system /sys/class/sec/tsp/holding_time
-    chown system system /sys/class/sec/tsp/all_touch_count
-    chown system system /sys/class/sec/tsp/z_value
-    chown system system /sys/class/sec/tsp/sensitivity_mode
-    chown system system /sys/class/sec/tsp/prox_power_off
-    chown system system /sys/class/sec/tsp/irq_recovery_count
-    chown system system /sys/class/sec/tsp/ic_reset_count
-    chown system system /sys/class/sec/tsp/mode_change_failed_count
-    chown system system /sys/class/sec/sec_key/key_pressed_count
-    chown system system /dev/tspio
-    chown system system /sys/class/sec/tsp/ear_detect_enable
-    chown system system /sys/class/sec/tsp/ta_mode
-    chown system system /sys/class/sec/tsp/virtual_prox
-    chown system system /sys/class/sec/tsp/hw_param
-
     # Permissions for Touchscreen-1
     chown system radio /sys/class/sec/tsp1/cmd
     chown system system /sys/class/sec/tsp1/input/enabled
