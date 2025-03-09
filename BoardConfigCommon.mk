@@ -119,9 +119,6 @@ TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 # A/B
 AB_OTA_UPDATER := false
 
-## Keymaster
-TARGET_KEYMASTER_VARIANT := samsung
-
 ## Manifest
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \

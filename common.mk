@@ -165,6 +165,8 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
     libkeymaster4_1support.vendor:64
 
+$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/a21s-common:libskeymaster4device)
+
 PRODUCT_PACKAGES += \
     libcrypto-tm \
     libshim_crypto:64 \
