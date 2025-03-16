@@ -305,6 +305,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     hardware/samsung_slsi/libbt
 
+# TEE
+PRODUCT_PACKAGES += \
+    tee_firmware_symlink
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.pixel \
