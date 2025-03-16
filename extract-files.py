@@ -66,6 +66,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libexynosgraphicbuffer.so'
     ) : blob_fixup()
         .add_needed('libshim_ui.so')
+    'vendor/lib/lib_SoundAlive_play_plus_ver400.so': blob_fixup()
+        .add_needed('liblog.so')
 }  # fmt: skip
 
 module = ExtractUtilsModule(
