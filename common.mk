@@ -303,7 +303,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
-    hardware/samsung/aidl/power-libperfmgr \
     hardware/samsung_slsi/libbt
 
 # Thermal
