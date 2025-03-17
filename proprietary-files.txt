@@ -79,23 +79,16 @@ vendor/lib64/libGrallocMapperCamera.so
 
 # Camera dependencies
 vendor/lib/libSEF.quram.so
-vendor/lib/libacryl.so
-vendor/lib/libcsc.so
 vendor/lib/libexynoscamera3.so
 vendor/lib/libexynoscamera_tdnr_plugin.so
-vendor/lib/libgiantmscl.so
-vendor/lib/libhwjpeg.so
 vendor/lib/libmfb.so
 vendor/lib/libsensorlistener.so;DISABLE_DEPS
 vendor/lib/libuniapi.so
 vendor/lib/libuniplugin.so
 vendor/lib/vendor.samsung.hardware.thermal@1.0.so
 vendor/lib64/libSEF.quram.so
-vendor/lib64/libcsc.so
 vendor/lib64/libexynoscamera3.so
 vendor/lib64/libexynoscamera_tdnr_plugin.so
-vendor/lib64/libgiantmscl.so
-vendor/lib64/libhwjpeg.so
 vendor/lib64/libmfb.so
 vendor/lib64/libsensorlistener.so
 vendor/lib64/libuniapi.so
@@ -173,68 +166,18 @@ vendor/etc/gnss/gps.debug.cfg
 
 # Graphics
 vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1;SYMLINK=vendor/lib/hw/vulkan.universal3830.so
-vendor/lib/libion_exynos.so
 vendor/lib/hw/vulkan.mali.so
 vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1;SYMLINK=vendor/lib64/hw/vulkan.universal3830.so
-vendor/lib64/libion_exynos.so
 vendor/lib64/hw/vulkan.mali.so
-
-# HWC
-vendor/lib64/hw/hwcomposer.exynos850.so
-vendor/lib/libExynosHWCService.so
-vendor/lib/libdrmresource.so
-vendor/lib/libexynosdisplay.so
-vendor/lib/libexynosscaler.so
-vendor/lib/libexynosutils.so
-vendor/lib/libexynosv4l2.so
-vendor/lib/hw/hwcomposer.exynos850.so
-vendor/lib64/libExynosHWCService.so
-vendor/lib64/libacryl.so
-vendor/lib64/libdrmresource.so
-vendor/lib64/libexynosdisplay.so
-vendor/lib64/libexynosscaler.so
-vendor/lib64/libexynosutils.so
-vendor/lib64/libexynosv4l2.so
 
 # Keymaster
 vendor/lib64/libkeymaster_helper.so;DISABLE_DEPS
 vendor/lib64/libskeymaster4device.so;DISABLE_DEPS
 
-# OMX
-vendor/lib/libstagefright_soft_gsmdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so;DISABLE_DEPS
-vendor/lib/omx/libOMX.Exynos.HEVC.Encoder.so;DISABLE_DEPS
-vendor/lib64/omx/libOMX.Exynos.HEVC.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.HEVC.Encoder.so
-vendor/etc/seccomp_policy/mediacodec.policy
-
-# OMX - from gta4xlwifi - lineage-21.0-20241228-nightly-gta4xlwifi-signed.zip
-vendor/lib/libstagefrighthw.so|7a4207e1c947f4850f1d5fc1e392576cabb53661
-vendor/lib/libExynosOMX_Core.so|0c70aaab748103377fb5bc13559614fd35661574
-vendor/lib/libExynosOMX_Resourcemanager.so|cb09547325b6165a367cb15263b55a1cf6d5b09c
-vendor/lib/libexynosgraphicbuffer.so|cc137b0e0ff38f1d24324c17155cbfca6b77888d|b337abbf35d29043a8bac33746c03101da1ca3d6
-vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so|c7848be4488be9cd842172f3f6edcf5cc3be62ed
-vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so|cf21e0d23c37a84988ae59b7dbe5cd9994340077
-vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|0ad129c1c250865bdf59348672a86c008f49520e
-vendor/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|5973d9ecd9e0b60c57e01476b317d44cbe19eabf
-vendor/lib/omx/libOMX.Exynos.VP8.Decoder.so|397f6d242dd8a159263a5675f798c14152dc334d
-vendor/lib/omx/libOMX.Exynos.VP8.Encoder.so|8ab93214fb8a701fb7cd74eefc4f28e0f13eeb77
-vendor/lib/omx/libOMX.Exynos.WMV.Decoder.so|5e8656553120966ab8cde0454eed801b0b74389b
-vendor/lib64/libstagefrighthw.so|9e500c219070f30f3950ce03d2a7026abbfd6c5d
-vendor/lib64/libExynosOMX_Core.so|0d2474183159bee1b0bdd3e06a1431d0cbae0a6b
-vendor/lib64/libExynosOMX_Resourcemanager.so|dea4d51cfb4ffa41cf89fb3ec0c4fca7061ae293
-vendor/lib64/libexynosgraphicbuffer.so|a3bba9ff45a295a20ec5f4d595b346fe8cc00deb|ad1f6f3d47a1f53b28a259ba6219d12e540d4c7f
-vendor/lib64/omx/libOMX.Exynos.AVC.Decoder.so|376c955be4a75a9cbe2089c7ca0c2bb93dbfc8c2
-vendor/lib64/omx/libOMX.Exynos.AVC.Encoder.so|dd96e16987b782853de4f903c0738b7b7d7db917
-vendor/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so|425f76384bac5716a4b5e3dbad1d84d000eecb11
-vendor/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so|13c7e13a919d035c0fe747ec95d4b7e456df14d5
-vendor/lib64/omx/libOMX.Exynos.VP8.Decoder.so|7e852bbe660bf15f51404d83cff5b1999c8e288d
-vendor/lib64/omx/libOMX.Exynos.VP8.Encoder.so|cfd30427830797d77780f74d9895d91a38ec7097
-vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so|ab335065a059ef35803237e6db2eb1005ab6b978
-
 # OMX Firmware
 vendor/firmware/is_lib.bin
 vendor/firmware/is_rta.bin
+vendor/etc/seccomp_policy/mediacodec.policy
 
 # RIL
 vendor/bin/cass;DISABLE_DEPS

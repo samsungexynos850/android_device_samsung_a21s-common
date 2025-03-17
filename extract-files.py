@@ -21,6 +21,11 @@ from extract_utils.main import (
 namespace_imports = [
     'device/samsung/a21s-common',
     'hardware/samsung',
+    'hardware/samsung_slsi-linaro/exynos',
+    'hardware/samsung_slsi-linaro/exynos5',
+    'hardware/samsung_slsi-linaro/graphics',
+    'hardware/samsung_slsi-linaro/interfaces',
+    'hardware/samsung_slsi-linaro/openmax',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -61,11 +66,6 @@ blob_fixups: blob_fixups_user_type = {
     ) : blob_fixup()
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
-    (
-        'vendor/lib/libexynosgraphicbuffer.so',
-        'vendor/lib64/libexynosgraphicbuffer.so'
-    ) : blob_fixup()
-        .add_needed('libshim_ui.so')
     'vendor/lib/lib_SoundAlive_play_plus_ver400.so': blob_fixup()
         .add_needed('liblog.so')
 }  # fmt: skip
