@@ -74,15 +74,13 @@ vendor/lib/libremosaic_wrapper.so
 vendor/lib64/hw/camera.exynos850.so
 vendor/lib64/libexynoscamera_plugin.so
 vendor/lib64/libremosaic_wrapper.so
-vendor/lib/libGrallocMapperCamera.so
-vendor/lib64/libGrallocMapperCamera.so
 
 # Camera dependencies
 vendor/lib/libSEF.quram.so
 vendor/lib/libexynoscamera3.so
 vendor/lib/libexynoscamera_tdnr_plugin.so
 vendor/lib/libmfb.so
-vendor/lib/libsensorlistener.so;DISABLE_DEPS
+vendor/lib/libsensorlistener.so
 vendor/lib/libuniapi.so
 vendor/lib/libuniplugin.so
 vendor/lib/vendor.samsung.hardware.thermal@1.0.so
@@ -94,7 +92,7 @@ vendor/lib64/libsensorlistener.so
 vendor/lib64/libuniapi.so
 vendor/lib64/libuniplugin.so
 vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
--vendor/etc/btcon.json
+vendor/etc/btcon.json
 
 # Charger Firmware
 vendor/firmware/mfc_fw.bin
@@ -105,12 +103,6 @@ vendor/etc/media_codecs_performance.xml
 vendor/etc/media_profiles_V1_0.xml
 
 # Fingerprint
-vendor/lib/libbauthserver.so
-vendor/lib/libbauthtzcommon.so
-vendor/lib/libegis_fp_normal_sensor_test.so
-vendor/lib/libgf_in_system_lib.so
-vendor/lib/libqfp_sensortest.so
-vendor/lib/libsynaFpSensorTestNwd.so;DISABLE_DEPS
 vendor/lib64/libbauthserver.so
 vendor/lib64/libbauthtzcommon.so
 vendor/lib64/libegis_fp_normal_sensor_test.so
@@ -171,8 +163,8 @@ vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendo
 vendor/lib64/hw/vulkan.mali.so
 
 # Keymaster
-vendor/lib64/libkeymaster_helper.so;DISABLE_DEPS
-vendor/lib64/libskeymaster4device.so;DISABLE_DEPS
+vendor/lib64/libkeymaster_helper.so
+vendor/lib64/libskeymaster4device.so
 
 # OMX Firmware
 vendor/firmware/is_lib.bin
@@ -180,7 +172,7 @@ vendor/firmware/is_rta.bin
 vendor/etc/seccomp_policy/mediacodec.policy
 
 # RIL
-vendor/bin/cass;DISABLE_DEPS
+vendor/bin/cass
 vendor/bin/cbd
 vendor/etc/init/cass.rc
 vendor/etc/init/init.baseband.rc
@@ -201,14 +193,14 @@ vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml|c3f8ea3
 vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml|e9cdde9d05c5cce32f76bbb164437f43b3288157
 vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml|ebbe359a9b2d78cb88debe79d9183c039afb7c01
 vendor/lib/libsemnativecarrierfeature.so|5758f3076a314d5dde595037ee33840fe61de52d
-vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos850;MODULE_SUFFIX=_vendor|3f8c4703d57869a05fe00ad21fb61643aac6a656
+vendor/lib/libsecril-client.so|3f8c4703d57869a05fe00ad21fb61643aac6a656
 vendor/lib64/libSemDataProps.so|86a95ebb35d80cc1ec2bdd0f80601787f1ef88ba
 vendor/lib64/libSemTelephonyProps.so|659466f18732155cbf308c14924135f2e65a3f48
 vendor/lib64/libprotobuf-cpp-full-21.7.so|92fd1090bd6aa2d00d4ae4e721f48a6e601b67d5
 vendor/lib64/libril_sem.so|d5032186f98c1ca5b619cab3bb944c6539fffd99
-vendor/lib64/libsec-ril.so;DISABLE_DEPS|5f71c524cb5a34bb800c4340fd5cd6b6ad7841c8|b04c31880ac2b762732c33127e7e4299ba696a64
+vendor/lib64/libsec-ril.so|5f71c524cb5a34bb800c4340fd5cd6b6ad7841c8|b04c31880ac2b762732c33127e7e4299ba696a64
 vendor/lib64/libsemnativecarrierfeature.so|fd821eb580a1f57b60cc483169da891376cbbb12
-vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos850;MODULE_SUFFIX=_vendor|cbde0c49fd7812229ef92cabec5d28e331a8cc13
+vendor/lib64/libsecril-client.so|cbde0c49fd7812229ef92cabec5d28e331a8cc13
 vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so|669709f8ff7d3435592c518ad0ba087f42b65606
 vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so|a324420e0ecab5f08c606f28eb233b68792072c7
 vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so|e44c75cf85ac8f286cce8877544e2df0403579e2
@@ -251,12 +243,15 @@ vendor/bin/tzts_daemon
 vendor/lib/libuuid.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libuuid.so
 vendor/bin/tzdaemon
--vendor/etc/init/teegris_v4.rc
+vendor/etc/init/teegris_v4.rc
 vendor/lib/libteecl.so
 vendor/lib64/libteecl.so
 
+# VNDK - from prebuilts/vndk/v32 - android-15.0.0_r20
+vendor/lib64/libcrypto-tm.so;FIX_SONAME|8d9f1c579d9b947539919c95351a4a2c365860de|285b597b3f1adff0fe1f6c5d10d4fdd90b8e5e54
+
 # Sensors
--vendor/etc/sensors/hals.conf
+vendor/etc/sensors/hals.conf
 vendor/lib/sensors.grip.so
 vendor/lib/sensors.sensorhub.so
 vendor/lib64/sensors.grip.so

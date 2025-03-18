@@ -35,10 +35,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     audio.r_submix.default \
-    audio.usb.default \
-    libaudioroute \
-    libtinycompress \
-    libprocessgroup.vendor
+    audio.usb.default
 
 # Dolby
 PRODUCT_PACKAGES += \
@@ -72,14 +69,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider-service.samsung \
-    libGrallocMapperCamera \
-    libhwjpeg \
-    libsensorndkbridge \
-    libion.vendor \
-    libutilscallstack.vendor \
-    libexpat.vendor \
-    libcamera_metadata \
-    libcamera_metadata.vendor
+    libGrallocMapperCamera
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -102,15 +92,13 @@ PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
     android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
-    libion
+    android.hardware.graphics.mapper@2.0-impl-2.1
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor:32 \
     android.hardware.drm-service.clearkey
 
 # fastbootd
@@ -126,11 +114,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
 
-# GNSS
-PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor:64 \
-    android.hardware.gnss@2.1.vendor:64
-
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -144,8 +127,6 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    libhidltransport \
-    libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor
 
@@ -164,15 +145,9 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-service.samsung \
-    libkeymaster4_1support.vendor:64
+    android.hardware.keymaster@4.0-service.samsung
 
 $(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/a21s-common:libskeymaster4device)
-
-PRODUCT_PACKAGES += \
-    libcrypto-tm \
-    libshim_crypto:64 \
-    libssl-tm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -262,33 +237,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat
-
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.2.vendor:64 \
-    android.hardware.radio.config-V1-ndk.vendor:64 \
-    android.hardware.radio.data-V1-ndk.vendor:64 \
-    android.hardware.radio.messaging-V1-ndk.vendor:64 \
-    android.hardware.radio.modem-V1-ndk.vendor:64 \
-    android.hardware.radio.network-V1-ndk.vendor:64 \
-    android.hardware.radio.sim-V1-ndk.vendor:64 \
-    android.hardware.radio.voice-V1-ndk.vendor:64 \
-    libnetutils.vendor:64 \
-    libsqlite.vendor:64 \
-    libcurl.vendor \
-    libjsoncpp.vendor \
-    libpng.vendor
-
-PRODUCT_PACKAGES += \
-    libdsms_vendor:64
-
 PRODUCT_PACKAGES += \
     secril_config_svc \
     sehradiomanager
@@ -298,12 +251,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.contexthub@1.0.vendor:64 \
     android.hardware.sensors-service.samsung-multihal
-
-# Shims
-PRODUCT_PACKAGES += \
-    libshim_sensorndkbridge
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -311,7 +259,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
-    hardware/samsung_slsi/libbt
+    hardware/samsung_slsi/libbt \
+    hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3
 
 # TEE
 PRODUCT_PACKAGES += \
@@ -334,19 +283,11 @@ PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
     android.hardware.usb.gadget-service.samsung
 
-# Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
-
 # NFC and Secure Element packages
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service.samsung \
     com.android.nfc_extras \
     Tag
-
-# VNDK
-PRODUCT_PACKAGES += \
-    libutils-v32
 
 # WiFi
 PRODUCT_PACKAGES += \
