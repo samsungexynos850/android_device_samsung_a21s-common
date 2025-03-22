@@ -68,7 +68,16 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
     'vendor/lib/lib_SoundAlive_play_plus_ver400.so': blob_fixup()
-        .add_needed('liblog.so')
+        .add_needed('liblog.so'),
+    (
+    'vendor/lib/libaudioparamupdate.so',
+    'vendor/lib/libaboxpcmdump.so',
+    'vendor/lib/libaudioproxy.so',
+    'vendor/lib/hw/audio.primary.exynos850.so',
+    ) : blob_fixup()
+        .replace_needed('libaudioroute.so','libaudioroute_a21s.so'),
+    'vendor/lib/libaudioproxy.so': blob_fixup()
+        .add_needed('libshim_audioproxy.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

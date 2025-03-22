@@ -6,10 +6,10 @@ vendor/lib/libSamsungPostProcessConvertor.so
 vendor/lib/lib_SamsungRec_07010.so
 vendor/lib/lib_SoundAlive_SRC384_ver320.so
 vendor/lib/lib_soundaliveresampler.so
-vendor/lib/libaboxpcmdump.so;DISABLE_DEPS
+vendor/lib/libaboxpcmdump.so
 vendor/lib/libalsautils_sec.so
-vendor/lib/libaudioparamupdate.so;DISABLE_DEPS
-vendor/lib/libaudioproxy.so;DISABLE_DEPS
+vendor/lib/libaudioparamupdate.so
+vendor/lib/libaudioproxy.so
 vendor/lib/libdatamod.so
 vendor/lib/libfloatingfeature.so
 vendor/lib/liblastaboxmsg.so
@@ -19,8 +19,7 @@ vendor/lib/libsecaudiocoreutils.so
 vendor/lib/libsecaudioinfo.so
 vendor/lib/soundfx/libaudioeffectoffload.so
 vendor/lib/soundfx/libswdap.so
-vendor/lib/vndk/libaudioroute.so:vendor/lib/libaudioroute.so;MODULE=libaudioroute.exynos850
-vendor/lib/vndk/libtinyalsa.so:vendor/lib/libtinyalsa.so;MODULE=libtinyalsa.exynos850
+vendor/lib/vndk/libaudioroute.so:vendor/lib/libaudioroute_a21s.so;FIX_SONAME
 vendor/lib64/libfloatingfeature.so
 vendor/lib64/libsecaudiocoreutils.so
 vendor/lib64/libsecaudioinfo.so
