@@ -156,6 +156,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 ## RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
+$(call soong_config_set,cbd,protocol,sipc)
+
 ## Security
 VENDOR_SECURITY_PATCH := 2024-05-01
 
