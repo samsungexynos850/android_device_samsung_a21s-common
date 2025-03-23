@@ -92,7 +92,11 @@ PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
     android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1
+    android.hardware.graphics.mapper@2.0-impl-2.1 \
+    gralloc.universal3830
+
+PRODUCT_PACKAGES += \
+    libGrallocWrapper
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

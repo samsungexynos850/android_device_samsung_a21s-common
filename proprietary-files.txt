@@ -109,10 +109,6 @@ vendor/lib64/libgf_in_system_lib.so
 vendor/lib64/libqfp_sensortest.so
 vendor/lib64/libsynaFpSensorTestNwd.so
 
-# Gralloc
-vendor/lib/hw/gralloc.exynos850.so
-vendor/lib64/hw/gralloc.exynos850.so
-
 # Firmware
 vendor/firmware/MCD_NACHO_slog.bin
 vendor/firmware/abox_tplg.bin
