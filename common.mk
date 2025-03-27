@@ -35,7 +35,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    audio.primary.universal3830
 
 # Mixer
 PRODUCT_COPY_FILES += \
@@ -273,6 +274,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     hardware/samsung_slsi/libbt \
     hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3 \
+    hardware/samsung_slsi-linaro/exynos/libaudio/audiohal_comv1 \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3
 
 # Thermal

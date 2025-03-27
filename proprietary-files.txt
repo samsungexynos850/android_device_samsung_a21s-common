@@ -1,55 +1,11 @@
 # Common proprietary files - from Samsung package version A217FXXSCDXE2, unless pinned
 
 # Audio
-vendor/lib/hw/audio.primary.exynos850.so
-vendor/lib/libSamsungPostProcessConvertor.so
-vendor/lib/lib_SamsungRec_07010.so
-vendor/lib/lib_SoundAlive_SRC384_ver320.so
-vendor/lib/lib_soundaliveresampler.so
-vendor/lib/libaboxpcmdump.so
-vendor/lib/libalsautils_sec.so
-vendor/lib/libaudioparamupdate.so
-vendor/lib/libaudioproxy.so
-vendor/lib/libdatamod.so
-vendor/lib/libfloatingfeature.so
-vendor/lib/liblastaboxmsg.so
-vendor/lib/libprofileparamstorage.so
-vendor/lib/librecordalive.so
-vendor/lib/libsecaudiocoreutils.so
-vendor/lib/libsecaudioinfo.so
-vendor/lib/soundfx/libaudioeffectoffload.so
-vendor/lib/soundfx/libswdap.so
-vendor/lib/vndk/libaudioroute.so:vendor/lib/libaudioroute_a21s.so;FIX_SONAME
-vendor/lib64/libfloatingfeature.so
-vendor/lib64/libsecaudiocoreutils.so
-vendor/lib64/libsecaudioinfo.so
-vendor/lib64/soundfx/libaudioeffectoffload.so
 vendor/etc/audio_board_info.xml
 vendor/etc/default_volume_tables.xml
 vendor/etc/dolby/dax-default.xml
 vendor/etc/floating_feature.xml
 vendor/etc/usb_audio_policy_configuration.xml
-
-# Sound Effects
-vendor/lib/lib_SoundAlive_play_plus_ver400.so
-vendor/lib/lib_SoundAlive_AlbumArt_ver105.so
-vendor/lib/lib_SoundAlive_3DPosition_ver202.so
-vendor/lib/lib_SoundBooster_ver1050.so
-vendor/lib/soundfx/libmyspace.so
-vendor/lib/soundfx/libmysound.so
-vendor/lib/soundfx/libsamsungSoundbooster_plus.so
-vendor/lib64/soundfx/libsamsungSoundbooster_plus.so
-vendor/lib/soundfx/libaudiosaplus_sec.so
-vendor/etc/SoundBoosterParam.txt
-vendor/lib64/lib_SoundAlive_play_plus_ver400.so
-vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so
-vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
-vendor/lib64/libprofileparamstorage.so
-vendor/lib64/lib_SoundBooster_ver1050.so
-vendor/lib64/soundfx/libmyspace.so
-vendor/lib64/soundfx/libswdap.so
-vendor/lib64/soundfx/libmysound.so
-vendor/lib64/soundfx/libaudiosaplus_sec.so
 
 # Audio Firmware
 vendor/firmware/AP_AUDIO_SLSI.bin
@@ -174,8 +130,8 @@ vendor/etc/plmn_delta_attaio.bin
 vendor/etc/plmn_delta_hktw.bin
 vendor/etc/plmn_delta_usagsm.bin
 vendor/etc/plmn_se13.bin
-vendor/lib/libaudio-ril.so
 vendor/lib64/libengmode_client.so
+vendor/lib64/libfloatingfeature.so
 vendor/lib64/libvkmanager_vendor.so
 
 ## RIL - from a14 - A145FXXS8CXJ2

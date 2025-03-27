@@ -31,6 +31,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
+## Audio
+$(call soong_config_set,exynos_audio,PREDEFINED_LOW_CAPTURE_DURATION,20)
+
 ## Boot Image
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_CUSTOM_BOOTIMG := true
