@@ -1,0 +1,1336 @@
+<mixer>
+	<!-- Output volume stage -->
+	<!-- media playback volume -->
+	<path name="gain-media-handset">
+        <ctl name="DAC Center Gain" value="141" />
+        <ctl name="DAC Gain" value="150 150" />
+        <ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-media-speaker">
+	</path>
+
+	<path name="gain-media-headset">
+		<ctl name="DAC Gain" value="137 137" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-media-headphone">
+		<path name="gain-media-headset" />
+	</path>
+
+	<path name="gain-media-speaker-headset">
+		<ctl name="DAC Center Gain" value="140" />
+		<ctl name="DAC Gain" value="75 75" />
+	</path>
+
+	<path name="gain-media-speaker-headphone">
+		<path name="gain-media-speaker-headset" />
+	</path>
+
+	<path name="gain-media-bt-sco-headset">
+	</path>
+
+	<path name="gain-media-speaker-bt-sco-headset">
+	</path>
+
+	<!-- Communication playback volume -->
+	<path name="gain-communication-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-communication-speaker">
+	</path>
+
+	<path name="gain-communication-gaming-speaker">
+	</path>
+
+	<path name="gain-communication-dex-speaker">
+	</path>
+
+	<path name="gain-communication-headset">
+		<ctl name="DAC Gain" value="130 130" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-communication-headphone">
+		<ctl name="DAC Gain" value="130 130" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-communication-bt-sco-headset">
+	</path>
+
+	<!-- samsung voip fmc playback volume -->
+	<path name="gain-samsung_voip_fmc-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-speaker">
+	</path>
+
+	<path name="gain-samsung_voip_fmc-dex-speaker">
+	</path>
+
+	<path name="gain-samsung_voip_fmc-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-bt-sco-headset">
+	</path>
+
+	<!-- wificall nb playback volume -->
+	<path name="gain-wificall_nb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-wificall_nb-speaker">
+	</path>
+
+	<path name="gain-wificall_nb-dex-speaker">
+	</path>
+
+	<path name="gain-wificall_nb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-wificall_nb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-wificall_nb-bt-sco-headset">
+	</path>
+
+	<!-- wificall wb playback volume -->
+	<path name="gain-wificall_wb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-wificall_wb-speaker">
+	</path>
+
+	<path name="gain-wificall_wb-dex-speaker">
+	</path>
+
+	<path name="gain-wificall_wb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-wificall_wb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-wificall_wb-bt-sco-headset">
+	</path>
+
+	<!-- wificall evs playback volume -->
+	<path name="gain-wificall_evs-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-wificall_evs-speaker">
+	</path>
+
+	<path name="gain-wificall_evs-dex-speaker">
+	</path>
+
+	<path name="gain-wificall_evs-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-wificall_evs-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-wificall_evs-bt-sco-headset">
+	</path>
+
+	<!-- Video call playback volume -->
+	<path name="gain-video_call-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-video_call-speaker">
+	</path>
+
+	<path name="gain-video_call-dex-speaker">
+	</path>
+
+	<path name="gain-video_call-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-video_call-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-video_call-bt-sco-headset">
+	</path>
+
+	<!-- CP Call Output volume -->
+	<!-- NB volume -->
+	<path name="gain-incall_nb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-incall_nb-speaker">
+	</path>
+
+	<path name="gain-incall_nb-dex-speaker">
+	</path>
+
+	<path name="gain-incall_nb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-incall_nb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-incall_nb-bt-sco-headset">
+	</path>
+
+	<path name="gain-incall_nb-hearing-aid">
+	</path>
+
+	<!-- WB volume -->
+	<path name="gain-incall_wb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-incall_wb-speaker">
+	</path>
+
+	<path name="gain-incall_wb-dex-speaker">
+	</path>
+
+	<path name="gain-incall_wb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-incall_wb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-incall_wb-bt-sco-headset">
+	</path>
+
+	<path name="gain-incall_wb-hearing-aid">
+	</path>
+
+	<!-- VoLTE CP NB playback volume -->
+	<path name="gain-volte_cp_nb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-volte_cp_nb-speaker">
+	</path>
+
+	<path name="gain-volte_cp_nb-dex-speaker">
+	</path>
+
+	<path name="gain-volte_cp_nb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_cp_nb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_cp_nb-bt-sco-headset">
+	</path>
+
+	<path name="gain-volte_cp_nb-hearing-aid">
+	</path>
+
+	<!-- VoLTE CP WB playback volume -->
+	<path name="gain-volte_cp_wb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="148 148" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-volte_cp_wb-speaker">
+	</path>
+
+	<path name="gain-volte_cp_wb-dex-speaker">
+	</path>
+
+	<path name="gain-volte_cp_wb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_cp_wb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_cp_wb-bt-sco-headset">
+	</path>
+
+	<path name="gain-volte_cp_wb-hearing-aid">
+	</path>
+
+	<!-- EVS volume -->
+	<path name="gain-volte_cp_evs-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-volte_cp_evs-speaker">
+	</path>
+
+	<path name="gain-volte_cp_evs-dex-speaker">
+	</path>
+
+	<path name="gain-volte_cp_evs-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_cp_evs-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_cp_evs-bt-sco-headset">
+	</path>
+
+	<path name="gain-volte_cp_evs-hearing-aid">
+	</path>
+
+	<!-- VoLTE VT CP NB playback volume -->
+	<path name="gain-volte_vt_cp_nb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-speaker">
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-dex-speaker">
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-bt-sco-headset">
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-hearing-aid">
+	</path>
+
+	<!-- VoLTE VT CP WB playback volume -->
+	<path name="gain-volte_vt_cp_wb-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-speaker">
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-dex-speaker">
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-bt-sco-headset">
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-hearing-aid">
+	</path>
+
+	<!-- EVS VT volume -->
+	<path name="gain-volte_vt_cp_evs-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-speaker">
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-dex-speaker">
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-bt-sco-headset">
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-hearing-aid">
+	</path>
+
+	<!-- TTY Mode volume-->
+	<path name="gain-tty_mode-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-tty_mode-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-tty_mode-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<!-- AP TTY Mode volume-->
+	<path name="gain-ap_tty_mode-handset">
+		<ctl name="DAC Center Gain" value="150" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-ap_tty_mode-headset">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-ap_tty_mode-headphone">
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<!-- FM radio volume -->
+	<path name="gain-fm_radio-speaker">
+		<path name="gain-media-speaker" />
+	</path>
+
+	<path name="gain-fm_radio-headphone">
+		<ctl name="DAC Gain" value="130 130" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-fm_radio-headset">
+		<ctl name="DAC Gain" value="130 130" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-fm_radio-external">
+	</path>
+
+	<path name="gain-karaoke-speaker">
+	</path>
+
+	<!-- call forwarding output volume -->
+	<path name="gain-call_forwarding_primary">
+		<!-- we use default volume -->
+	</path>
+
+	<!-- Spectro output volume -->
+	<path name="gain-call_spectro">
+	</path>
+
+	<!-- Input stage volume -->
+	<!-- media input volume -->
+	<path name="gain-media-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-media-2nd-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-media-dualmic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-media-headset-mic">
+		<ctl name="EAR MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="136" />
+		<ctl name="ADC Right Gain" value="136" />
+	</path>
+
+	<path name="gain-media-headphone-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-media-bt-sco-headset-in">
+	</path>
+
+	<!-- voice recording input volume -->
+	<path name="gain-recording-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="140" />
+		<ctl name="ADC Right Gain" value="140" />
+	</path>
+
+	<path name="gain-recording-2nd-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-recording-dualmic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-recording-headset-mic">
+		<ctl name="EAR MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="136" />
+		<ctl name="ADC Right Gain" value="136" />
+	</path>
+
+	<path name="gain-recording-headphone-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-recording-bt-sco-headset-in">
+	</path>
+
+	<!-- camcorder input volume -->
+	<path name="gain-camcorder-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-camcorder-2nd-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-camcorder-dualmic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="135" />
+		<ctl name="ADC Right Gain" value="138" />
+	</path>
+
+	<path name="gain-camcorder-headset-mic">
+		<ctl name="EAR MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="136" />
+		<ctl name="ADC Right Gain" value="136" />
+	</path>
+
+	<path name="gain-camcorder-headphone-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<!-- recognition input volume -->
+	<path name="gain-recognition-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-recognition-2nd-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-recognition-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-recognition-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-recognition-bt-sco-headset-in">
+	</path>
+
+	<!-- Karaoke Listenback MIC paths -->
+	<path name="gain-listenback-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-listenback-headset-mic">
+		<ctl name="EAR MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="136" />
+		<ctl name="ADC Right Gain" value="136" />
+	</path>
+
+	<path name="gain-listenback-headphone-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+
+	<path name="gain-listenback-bt-sco-headset-in">
+	</path>
+
+	<!-- communication input volume -->
+	<path name="gain-communication-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-communication-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-communication-gaming-speaker-mic">
+		<path name="gain-communication-speaker-mic" />
+	</path>
+
+	<path name="gain-communication-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-communication-headset-mic">
+		<ctl name="ADC Left Gain" value="141" />
+		<ctl name="ADC Right Gain" value="141" />
+	</path>
+
+	<path name="gain-communication-headphone-mic">
+		<ctl name="ADC Left Gain" value="141" />
+		<ctl name="ADC Right Gain" value="141" />
+	</path>
+
+	<path name="gain-communication-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-communication-bt-sco-nrec-headset-in">
+	</path>
+
+	<!-- samsung voip fmc input volume -->
+	<path name="gain-samsung_voip_fmc-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-samsung_voip_fmc-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-samsung_voip_fmc-bt-sco-nrec-headset-in">
+	</path>
+
+	<!-- wificall nb input volume -->
+	<path name="gain-wificall_nb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_nb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_nb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_nb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_nb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_nb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-wificall_nb-bt-sco-nrec-headset-in">
+	</path>
+
+	<!-- wificall wb input volume -->
+	<path name="gain-wificall_wb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_wb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_wb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_wb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_wb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_wb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-wificall_wb-bt-sco-nrec-headset-in">
+	</path>
+
+	<!-- wificall evs input volume -->
+	<path name="gain-wificall_evs-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_evs-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_evs-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_evs-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_evs-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-wificall_evs-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-wificall_evs-bt-sco-nrec-headset-in">
+	</path>
+
+	<!-- Video call input volume -->
+	<path name="gain-video_call-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-video_call-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-video_call-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-video_call-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-video_call-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-video_call-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-video_call-bt-sco-nrec-headset-in">
+	</path>
+
+	<!-- CP Call Input volume -->
+	<!-- NB volume -->
+	<path name="gain-incall_nb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_nb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_nb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_nb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_nb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_nb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-incall_nb-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- WB volume -->
+	<path name="gain-incall_wb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_wb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_wb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_wb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_wb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-incall_wb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-incall_wb-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- VoLTE CP NB input volume -->
+	<path name="gain-volte_cp_nb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_nb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_nb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_nb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_nb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_nb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-volte_cp_nb-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- VoLTE CP WB input volume -->
+	<path name="gain-volte_cp_wb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_wb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_wb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_wb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_wb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_wb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-volte_cp_wb-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- EVS Input volume -->
+	<path name="gain-volte_cp_evs-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_evs-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_evs-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_evs-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_evs-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_cp_evs-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-volte_cp_evs-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- VoLTE VT CP NB input volume -->
+	<path name="gain-volte_vt_cp_nb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-volte_vt_cp_nb-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- VoLTE VT CP WB input volume -->
+	<path name="gain-volte_vt_cp_wb-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-volte_vt_cp_wb-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- EVS VT Input volume -->
+	<path name="gain-volte_vt_cp_evs-handset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-dex-speaker-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-headphone-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-bt-sco-headset-in">
+	</path>
+
+	<path name="gain-volte_vt_cp_evs-hearing-aid-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<!-- TTY Mode Input volume -->
+	<path name="gain-tty_mode-vco-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-tty_mode-full-mic">
+		<ctl name="ADC Left Gain" value="130" />
+		<ctl name="ADC Right Gain" value="130" />
+	</path>
+
+	<path name="gain-tty_mode-hco-mic">
+		<ctl name="ADC Left Gain" value="130" />
+		<ctl name="ADC Right Gain" value="130" />
+	</path>
+
+	<!-- AP TTY Mode Input volume -->
+	<path name="gain-ap_tty_mode-vco-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-ap_tty_mode-full-mic">
+		<ctl name="ADC Left Gain" value="130" />
+		<ctl name="ADC Right Gain" value="130" />
+	</path>
+
+	<path name="gain-ap_tty_mode-hco-mic">
+		<ctl name="ADC Left Gain" value="130" />
+		<ctl name="ADC Right Gain" value="130" />
+	</path>
+
+	<!-- call forwarding input volume -->
+	<path name="gain-call_forwarding_primary-mic">
+		<!-- we use default volume -->
+	</path>
+
+	<!-- Spectro input volume -->
+	<path name="gain-call_spectro-mic">
+	</path>
+
+	<!-- Factory test paths -->
+	<!-- Loopback (no delay) volume -->
+	<path name="gain-loopback-headset">
+		<ctl name="DAC Gain" value="132 132" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<!-- Packet Loopback output volume-->
+	<path name="gain-loopback_packet-handset">
+		<ctl name="DAC Center Gain" value="140" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-loopback_packet-speaker">
+		<ctl name="DAC Center Gain" value="140" />
+		<ctl name="DAC Gain" value="150 150" />
+	</path>
+
+	<path name="gain-loopback_packet-headset">
+		<ctl name="DAC Gain" value="143 143" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<!-- Packet Loopback incallmusic output volume-->
+	<path name="gain-loopback_packet-incallmusic-handset">
+	</path>
+
+	<!-- Realtime Loopback output volume-->
+	<path name="gain-realtimeloopback-handset">
+		<ctl name="DAC Center Gain" value="140" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-realtimeloopback-speaker">
+		<ctl name="DAC Center Gain" value="140" />
+		<ctl name="DAC Gain" value="150 150" />
+	</path>
+
+	<path name="gain-realtimeloopback-headset">
+		<ctl name="DAC Gain" value="126 126" />
+		<ctl name="DAC Center Gain" value="0" />
+	</path>
+
+	<path name="gain-realtimeloopback-bt-sco-headset">
+	</path>
+
+	<!-- echo(rms) test output volume -->
+	<path name="gain-echo_test-handset">
+		<ctl name="DAC Center Gain" value="140" />
+		<ctl name="DAC Gain" value="150 150" />
+		<ctl name="AVC Gain" value="6" />
+	</path>
+
+	<path name="gain-echo_test-speaker">
+	</path>
+
+	<path name="gain-echo_thd_test-handset">
+		<ctl name="DAC Center Gain" value="140" />
+		<ctl name="DAC Gain" value="150 150" />
+	</path>
+
+	<path name="gain-echo_thd_test-speaker">
+	</path>
+
+	<!-- Loopback Input (no delay) -->
+	<path name="gain-loopback-mic">
+		<ctl name="ADC Left Gain" value="133" />
+		<ctl name="ADC Right Gain" value="133" />
+	</path>
+
+	<path name="gain-loopback-2nd-mic">
+		<ctl name="ADC Left Gain" value="143" />
+		<ctl name="ADC Right Gain" value="143" />
+	</path>
+
+	<!-- Packet Loopback Input -->
+	<path name="gain-loopback_packet-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-loopback_packet-2nd-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-loopback_packet-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-loopback_packet-dualmic">
+	</path>
+
+	<path name="gain-loopback_packet-handset-dualmic">
+	</path>
+
+	<path name="gain-loopback_packet-speaker-dualmic">
+	</path>
+
+	<!-- Packet Loopback incallmusic input -->
+	<path name="gain-loopback_packet-incallmusic-mic">
+		<!-- AP Music RD0 -> CP Tx , No tuning point -->
+	</path>
+
+	<!-- Realtime Loopback Input -->
+	<path name="gain-realtimeloopback-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-realtimeloopback-2nd-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-realtimeloopback-headset-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-realtimeloopback-bt-sco-headset-in">
+	</path>
+
+	<!-- echo(rms) test input volume -->
+	<path name="gain-echo_test-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-echo_test-2nd-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-echo_test-dualmic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-echo_test-multi-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-echo_thd_test-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-echo_thd_test-2nd-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-echo_thd_test-dualmic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-echo_thd_test-multi-mic">
+		<ctl name="ADC Left Gain" value="145" />
+		<ctl name="ADC Right Gain" value="145" />
+	</path>
+
+	<path name="gain-karaoke-2nd-mic">
+		<ctl name="MAIN MIC Gain" value="1" />
+		<ctl name="SUB MIC Gain" value="1" />
+		<ctl name="ADC Left Gain" value="142" />
+		<ctl name="ADC Right Gain" value="142" />
+	</path>
+</mixer>
