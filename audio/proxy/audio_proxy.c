@@ -44,7 +44,8 @@
 #include <audio_utils/channels.h>
 #include <audio_utils/primitives.h>
 #include <audio_utils/clock.h>
-#include <tinyalsa/asoundlib.h>
+#include <hardware/audio.h>
+#include <sound/asound.h>
 
 #include "audio_proxy.h"
 #include "audio_proxy_interface.h"
@@ -236,7 +237,6 @@ static int get_pcm_device_number(void *proxy, void *proxy_stream)
 {
     struct audio_proxy *aproxy = proxy;
     struct audio_proxy_stream *apstream = (struct audio_proxy_stream *)proxy_stream;
-    struct audio_route *aroute = aproxy->aroute;
     int pcm_device_number = -1;
     bool is_direct_link;
 
@@ -244,9 +244,7 @@ static int get_pcm_device_number(void *proxy, void *proxy_stream)
     if (apstream) {
         switch(apstream->stream_type) {
             case ASTREAM_PLAYBACK_PRIMARY:
-                pcm_device_number = get_dai_link(aroute, PLAYBACK_DEEP_LINK);
-                if (pcm_device_number < 0)
-                    pcm_device_number = PRIMARY_PLAYBACK_DEVICE;
+                pcm_device_number = PRIMARY_PLAYBACK_DEVICE;
                 break;
 
             case ASTREAM_PLAYBACK_FAST:
@@ -254,24 +252,16 @@ static int get_pcm_device_number(void *proxy, void *proxy_stream)
                 break;
 
             case ASTREAM_PLAYBACK_LOW_LATENCY:
-                pcm_device_number = get_dai_link(aroute, PLAYBACK_LOW_LINK);
-                if (pcm_device_number < 0)
-                    pcm_device_number = LOW_PLAYBACK_DEVICE;
+                pcm_device_number = LOW_PLAYBACK_DEVICE;
                 break;
 
             case ASTREAM_PLAYBACK_DEEP_BUFFER:
-                is_direct_link = (apstream->pcmconfig.rate > DEFAULT_MEDIA_SAMPLING_RATE
-                                         || apstream->pcmconfig.format != DEFAULT_MEDIA_FORMAT);
-                pcm_device_number = get_dai_link(aroute,
-                                    (is_direct_link ? PLAYBACK_DEEP_DIRECT_LINK : PLAYBACK_DEEP_LINK));
-                if (pcm_device_number < 0)
-                    pcm_device_number = (is_direct_link ? DEEP_PLAYBACK_DIRECT_DEVICE : DEEP_PLAYBACK_DEVICE);
+                pcm_device_number = ((apstream->pcmconfig.rate > DEFAULT_MEDIA_SAMPLING_RATE) ?
+                                     DEEP_PLAYBACK_DIRECT_DEVICE : DEEP_PLAYBACK_DEVICE);
                 break;
 
             case ASTREAM_PLAYBACK_COMPR_OFFLOAD:
-                pcm_device_number = get_dai_link(aroute, PLAYBACK_OFFLOAD_LINK);
-                if (pcm_device_number < 0)
-                    pcm_device_number = OFFLOAD_PLAYBACK_DEVICE;
+                pcm_device_number = OFFLOAD_PLAYBACK_DEVICE;
                 break;
 
             case ASTREAM_PLAYBACK_MMAP:
@@ -279,27 +269,19 @@ static int get_pcm_device_number(void *proxy, void *proxy_stream)
                 break;
 
             case ASTREAM_PLAYBACK_AUX_DIGITAL:
-                pcm_device_number = get_dai_link(aroute, PLAYBACK_AUX_DIGITAL_LINK);
-                if (pcm_device_number < 0)
-                    pcm_device_number = AUX_PLAYBACK_DEVICE;
+                pcm_device_number = AUX_PLAYBACK_DEVICE;
                 break;
 
             case ASTREAM_CAPTURE_PRIMARY:
-                pcm_device_number = get_dai_link(aroute, CAPTURE_LINK);
-                if (pcm_device_number < 0)
-                    pcm_device_number = PRIMARY_CAPTURE_DEVICE;
+                pcm_device_number = PRIMARY_CAPTURE_DEVICE;
                 break;
 
             case ASTREAM_CAPTURE_CALL:
-                pcm_device_number = get_dai_link(aroute, CALL_REC_CAPTURE_LINK);
-                if (pcm_device_number < 0)
-                    pcm_device_number = CALL_RECORD_DEVICE;
+                pcm_device_number = CALL_RECORD_DEVICE;
                 break;
 
             case ASTREAM_CAPTURE_TELEPHONYRX:
-                pcm_device_number = get_dai_link(aroute, TELEPHONYRX_CAPTURE_LINK);
-                if (pcm_device_number < 0)
-                    pcm_device_number = TELERX_RECORD_DEVICE;
+                pcm_device_number = TELERX_RECORD_DEVICE;
                 break;
 
             case ASTREAM_CAPTURE_LOW_LATENCY:
@@ -671,6 +653,52 @@ err_open:
     fmradio_capture_stop(aproxy);
     return -1;
 }
+
+struct mixer {
+    int fd;
+    struct snd_ctl_card_info card_info;
+    struct snd_ctl_elem_info *elem_info;
+    struct mixer_ctl *ctl;
+    unsigned int count;
+};
+
+static struct snd_ctl_event *mixer_read_event_sec(struct mixer *mixer, unsigned int mask)
+{
+    struct snd_ctl_event *ev;
+
+    if (!mixer)
+        return 0;
+
+    ev = calloc(1, sizeof(*ev));
+    if (!ev)
+        return 0;
+
+    while (read(mixer->fd, ev, sizeof(*ev)) > 0) {
+        if (ev->type != SNDRV_CTL_EVENT_ELEM)
+            continue;
+
+        if (!(ev->data.elem.mask & mask))
+            continue;
+
+        return ev;
+    }
+
+    free(ev);
+    return 0;
+}
+
+static int audio_route_missing_ctl(struct audio_route *ar) {
+    return 0;
+}
+
+/* Mask for mixer_read_event()
+ * It should be same with SNDRV_CTL_EVENT_MASK_* in asound.h.
+ */
+#define MIXER_EVENT_VALUE    (1 << 0)
+#define MIXER_EVENT_INFO     (1 << 1)
+#define MIXER_EVENT_ADD      (1 << 2)
+#define MIXER_EVENT_TLV      (1 << 3)
+#define MIXER_EVENT_REMOVE   (~0U)
 
 static void *mixer_update_loop(void *context)
 {
@@ -3545,8 +3573,8 @@ void proxy_deinit_route(void *proxy)
 bool proxy_update_route(void *proxy, int ausage, int device)
 {
     struct audio_proxy *aproxy = proxy;
-    audio_usage routed_ausage = (audio_usage)ausage;
-    device_type routed_device = (device_type)device;
+    audio_usage __unused routed_ausage = (audio_usage)ausage;
+    device_type __unused routed_device = (device_type)device;
 
     // Temp
     if (aproxy != NULL) {
