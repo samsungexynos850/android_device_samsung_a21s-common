@@ -280,10 +280,6 @@ static int get_pcm_device_number(void *proxy, void *proxy_stream)
                 pcm_device_number = CALL_RECORD_DEVICE;
                 break;
 
-            case ASTREAM_CAPTURE_TELEPHONYRX:
-                pcm_device_number = TELERX_RECORD_DEVICE;
-                break;
-
             case ASTREAM_CAPTURE_LOW_LATENCY:
                 pcm_device_number = LOW_CAPTURE_DEVICE;
                 break;
@@ -292,7 +288,8 @@ static int get_pcm_device_number(void *proxy, void *proxy_stream)
                 pcm_device_number = MMAP_CAPTURE_DEVICE;
                 break;
 
-            case ASTREAM_CAPTURE_FM:
+            case ASTREAM_CAPTURE_FM_TUNER:
+            case ASTREAM_CAPTURE_FM_RECORDING:
                 pcm_device_number = FM_RECORD_DEVICE;
                 break;
 
@@ -1038,8 +1035,8 @@ static void do_operations_by_playback_route_set(struct audio_proxy *aproxy,
     }
 
     /* Open/Close FM Radio PCM node based on Enable/disable */
-    if (routed_ausage != AUSAGE_FM_RADIO &&
-        !(routed_ausage == AUSAGE_USB_FM_RADIO && routed_device != DEVICE_USB_HEADSET)) {
+    if (routed_ausage != AUSAGE_FM_RADIO_TUNER &&
+        routed_ausage != AUSAGE_FM_RADIO_CAPTURE) {
         fmradio_playback_stop(aproxy);
         fmradio_capture_stop(aproxy);
     }
@@ -1390,8 +1387,7 @@ static int get_next_buffer(struct resampler_buffer_provider *buffer_provider,
                     in_get_pcm_dump(apstream, apstream->actual_read_buf, size_in_bytes, PCM_DUMP_PURE);
 #endif
 
-                if (apstream->stream_type == ASTREAM_CAPTURE_CALL ||
-                    apstream->stream_type == ASTREAM_CAPTURE_TELEPHONYRX) {
+                if (apstream->stream_type == ASTREAM_CAPTURE_CALL) {
                     /*
                      * [Call Recording Case]
                      * In case of Call Recording, A-Box sends stereo stream which uplink/downlink voice
@@ -1783,7 +1779,7 @@ void proxy_set_call_path_param(uint32_t set, uint32_t param, int32_t value)
     } else if (param == CALL_ROT) {  // change call type value format from Ril to firmware
         aproxy->call_param_idx.call_type = value;
         ALOGI("proxy-%s: update call-type param(%d)", __func__, value);
-    } else if (param == CALL_RXDEVICE) {
+    } else if (param == RX_DEVICE) {
         aproxy->call_param_idx.device = value;
         ALOGI("proxy-%s: update device param(%d)", __func__, value);
     }
@@ -2832,14 +2828,6 @@ void *proxy_create_capture_stream(void *proxy, int type, int usage, void *config
             check_conversion(apstream);
             break;
 
-        case ASTREAM_CAPTURE_TELEPHONYRX:
-            apstream->sound_card = TELERX_RECORD_CARD;
-            apstream->sound_device = get_pcm_device_number(aproxy, apstream);
-            apstream->pcmconfig = pcm_config_call_record;
-
-            check_conversion(apstream);
-            break;
-
         case ASTREAM_CAPTURE_LOW_LATENCY:
             apstream->sound_card = LOW_CAPTURE_CARD;
             apstream->sound_device = get_pcm_device_number(aproxy, apstream);
@@ -2877,7 +2865,8 @@ void *proxy_create_capture_stream(void *proxy, int type, int usage, void *config
             }
             break;
 
-        case ASTREAM_CAPTURE_FM:
+        case ASTREAM_CAPTURE_FM_TUNER:
+        case ASTREAM_CAPTURE_FM_RECORDING:
             apstream->sound_card = FM_RECORD_CARD;
             apstream->sound_device = get_pcm_device_number(aproxy, apstream);
             apstream->pcmconfig = pcm_config_fm_record;
@@ -3032,7 +3021,8 @@ int proxy_open_capture_stream(void *proxy_stream, int32_t min_size_frames, void 
         /* Virtual dai PCM is required only for normal capture */
         if (apstream->stream_type != ASTREAM_CAPTURE_LOW_LATENCY &&
             apstream->stream_type != ASTREAM_CAPTURE_CALL &&
-            apstream->stream_type != ASTREAM_CAPTURE_FM &&
+            apstream->stream_type != ASTREAM_CAPTURE_FM_TUNER &&
+            apstream->stream_type != ASTREAM_CAPTURE_FM_RECORDING &&
             apstream->stream_type != ASTREAM_CAPTURE_MMAP) {
             /* WDMA pcm should be started before opening virtual pcm */
             if (pcm_start(apstream->dma_pcm) == 0) {
@@ -3644,13 +3634,13 @@ bool proxy_set_route(void *proxy, int ausage, int device, int modifier, bool set
 
             // Update call-param index once routing is completed
             if (is_usage_Call(routed_ausage))
-                proxy_set_call_path_param(CALL_PATH_SET, CALL_NONE, 0);
+                proxy_set_call_path_param(CALL_PATH_SET, PARAM_NONE, 0);
 
             // Set Loopback for Playback Path
             enable_internal_path(aproxy, routed_ausage, routed_device);
 
-            if (ausage == AUSAGE_FM_RADIO ||
-                (ausage == AUSAGE_USB_FM_RADIO && device != DEVICE_USB_HEADSET)) {
+            if (ausage == AUSAGE_FM_RADIO_TUNER ||
+                ausage == AUSAGE_FM_RADIO_CAPTURE) {
                 /* Open/Close FM Radio PCM node based on Enable/disable */
                 proxy_start_fm_radio(aproxy);
             }
@@ -3681,8 +3671,8 @@ bool proxy_set_route(void *proxy, int ausage, int device, int modifier, bool set
 #endif
         }
     } else {
-        if (ausage == AUSAGE_FM_RADIO ||
-            (ausage == AUSAGE_USB_FM_RADIO && device != DEVICE_USB_HEADSET)) {
+        if (routed_ausage == AUSAGE_FM_RADIO_TUNER ||
+            ausage == AUSAGE_FM_RADIO_CAPTURE) {
             /* Open/Close FM Radio PCM node based on Enable/disable */
             proxy_stop_fm_radio(aproxy);
         }
@@ -4181,6 +4171,7 @@ int proxy_get_microphones(void *proxy, void *array, int *count)
 
 void proxy_update_uhqa_playback_stream(void *proxy_stream, int hq_mode)
 {
+#if 0
     struct audio_proxy_stream *apstream = (struct audio_proxy_stream *)proxy_stream;
     audio_quality_mode_t high_quality_mode = (audio_quality_mode_t)hq_mode;
 
@@ -4211,6 +4202,7 @@ void proxy_update_uhqa_playback_stream(void *proxy_stream, int hq_mode)
             ALOGVV("proxy-%s: not supported stream",  __func__);
         }
     }
+#endif
 }
 
 void proxy_set_uhqa_stream_config(void *proxy_stream, bool config)
