@@ -275,10 +275,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3 \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3
 
-# TEE
-PRODUCT_PACKAGES += \
-    tee_firmware_symlink
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.pixel \
