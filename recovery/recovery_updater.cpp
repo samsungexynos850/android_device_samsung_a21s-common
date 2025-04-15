@@ -16,28 +16,28 @@
 #include <android-base/properties.h>
 #include "edify/expr.h"
 #include "otautil/error_code.h"
-Value *VerifyBootloader(const char *name, State *state,
-                        const std::vector<std::unique_ptr<Expr>> &argv) {
-  int ret = 0;
+
+Value* VerifyBootloader(const char* name, State* state,
+                        const std::vector<std::unique_ptr<Expr>>& /*argv*/) {
   std::string bootloader = android::base::GetProperty("ro.boot.bootloader", "");
   if (bootloader.empty()) {
     return ErrorAbort(state, kFileGetPropFailure,
                       "%s() failed to read current bootloader version", name);
   }
-  std::string min_supported_bootloader_arg;
-  if (argv.empty() || !Evaluate(state, argv[0], &min_supported_bootloader_arg)) {
+
+  if (bootloader.length() < 9) {
     return ErrorAbort(state, kArgsParsingFailure,
-                      "%s() error parsing arguments", name);
+                      "%s() bootloader string too short: %s", name, bootloader.c_str());
   }
-  int min_supported_bootloader = int(min_supported_bootloader_arg[0]);
-  int version = 0;
-  if (bootloader.length() >= 4)
-    version = int(bootloader[bootloader.length() - 4]);
-  if (version >= min_supported_bootloader) {
-    ret = 1;
+
+  char ninth_char = bootloader[8]; // index 8 = 9th character
+  if (ninth_char == 'C') {
+    return StringValue("1");
+  } else {
+    return StringValue("0");
   }
-  return StringValue(std::to_string(ret));
 }
+
 void Register_librecovery_updater_exynos850() {
   RegisterFunction("exynos850.verify_bootloader_min", VerifyBootloader);
 }

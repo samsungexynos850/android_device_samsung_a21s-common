@@ -40,12 +40,11 @@ def AddImage(info, basename, dest):
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest))
 
 def OTA_Assertions(info):
-  android_info = info.input_zip.read("OTA/android-info.txt").decode("utf-8")
-  m = re.search(r'require\s+version-bootloader-min\s*=\s*(\S+)', android_info)
-  if m:
-    bootloader_version = m.group(1)
-    cmd = ('assert(exynos850.verify_bootloader_min("{}") == "1" || abort("ERROR: This package requires binary C based firmware. Please upgrade firmware and retry!"););').format(bootloader_version)
-    info.script.AppendExtra(cmd)
+  cmd = (
+      'assert(exynos850.verify_bootloader_min("") == "1" || '
+      'abort("ERROR: This build requires a bootloader with binary version C. Please update your firmware."););'
+  )
+  info.script.AppendExtra(cmd)
   return
 
 def PrintInfo(info, dest):

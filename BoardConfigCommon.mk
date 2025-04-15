@@ -31,9 +31,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
-## Board
-TARGET_BOARD_INFO_FILE := $(COMMON_PATH)/board-info.txt
-
 ## Boot Image
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_CUSTOM_BOOTIMG := true
