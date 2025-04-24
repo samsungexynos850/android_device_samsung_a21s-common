@@ -1244,7 +1244,7 @@
 	</path>
 
 	<path name="media-mic">
-		<path name="dev-main-mic" />
+		<path name="dev-dual-mic" />
 		<path name="route-ap-record" />
 	</path>
 

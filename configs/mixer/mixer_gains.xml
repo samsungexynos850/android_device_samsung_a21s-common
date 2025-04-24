@@ -604,13 +604,11 @@
 
 	<!-- recognition input volume -->
 	<path name="gain-recognition-mic">
-		<ctl name="ADC Left Gain" value="145" />
-		<ctl name="ADC Right Gain" value="145" />
+		<path name="gain-media-mic" />
 	</path>
 
 	<path name="gain-recognition-2nd-mic">
-		<ctl name="ADC Left Gain" value="145" />
-		<ctl name="ADC Right Gain" value="145" />
+		<path name="gain-media-2nd-mic" />
 	</path>
 
 	<path name="gain-recognition-headset-mic">
