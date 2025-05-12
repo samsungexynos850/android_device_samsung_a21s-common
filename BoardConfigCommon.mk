@@ -108,7 +108,7 @@ TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos850
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_exynos3830
+$(call soong_config_set,libinit,vendor_init_lib,//device/samsung/a21s-common:libinit_exynos3830)
 
 # A/B
 AB_OTA_UPDATER := false
