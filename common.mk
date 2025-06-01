@@ -40,8 +40,7 @@ PRODUCT_PACKAGES += \
 
 # Mixer
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/mixer/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    $(COMMON_PATH)/configs/mixer/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml
+    $(COMMON_PATH)/configs/mixer/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Dolby
 PRODUCT_PACKAGES += \
