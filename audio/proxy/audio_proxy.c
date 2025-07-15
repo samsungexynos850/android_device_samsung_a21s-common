@@ -4047,6 +4047,54 @@ void proxy_set_volume(void *proxy, int volume_type, float left, float right)
     return;
 }
 
+void proxy_clear_apcall_txse(void)
+{
+    struct audio_proxy *aproxy = getInstance();
+    char basic_path_name[MAX_PATH_NAME_LEN];
+    char path_name[MAX_PATH_NAME_LEN];
+    audio_usage ausage = aproxy->active_capture_ausage;
+
+    memset(path_name, 0, MAX_PATH_NAME_LEN);
+
+    if (snprintf(path_name, MAX_PATH_NAME_LEN - 1, "set-%s-txse", usage_path_table[ausage]) < 0) {
+        ALOGE("proxy-%s: path name has error: %s", __func__, strerror(errno));
+        return;
+    }
+
+    pthread_rwlock_rdlock(&aproxy->mixer_update_lock);
+
+    audio_route_reset_and_update_path(aproxy->aroute, path_name);
+    ALOGI("proxy-%s: %s is disabled", __func__, path_name);
+
+    pthread_rwlock_unlock(&aproxy->mixer_update_lock);
+
+    return ;
+}
+
+void proxy_set_apcall_txse(void)
+{
+    struct audio_proxy *aproxy = getInstance();
+    char basic_path_name[MAX_PATH_NAME_LEN];
+    char path_name[MAX_PATH_NAME_LEN];
+    audio_usage ausage = aproxy->active_capture_ausage;
+
+    memset(path_name, 0, MAX_PATH_NAME_LEN);
+
+    if (snprintf(path_name, MAX_PATH_NAME_LEN - 1, "set-%s-txse", usage_path_table[ausage]) < 0) {
+        ALOGE("proxy-%s: path name has error: %s", __func__, strerror(errno));
+        return;
+    }
+
+    pthread_rwlock_rdlock(&aproxy->mixer_update_lock);
+
+    audio_route_apply_and_update_path(aproxy->aroute, path_name);
+    ALOGI("proxy-%s: %s is enabled", __func__, path_name);
+
+    pthread_rwlock_unlock(&aproxy->mixer_update_lock);
+
+    return ;
+}
+
 void proxy_set_upscale(void *proxy, int sampling_rate, int pcm_format)
 {
     struct audio_proxy *aproxy = proxy;
