@@ -52,6 +52,8 @@
 #define CALL_VOLUME_CONTROL_NAME "ABOX Speech Volume"
 #define CALL_PLAYBACK_VOLUME_MAX   15
 
+#define CALL_TX_MUTE_CONTROL_NAME "ABOX DVTx Tx Mute"
+
 typedef enum {
     /* USBMODE         = 0, */
     MUTE_CONTROL    = 1,
