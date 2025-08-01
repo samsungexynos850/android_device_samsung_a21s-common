@@ -2968,45 +2968,8 @@ int proxy_open_capture_stream(void *proxy_stream, int32_t min_size_frames, void 
         ALOGI("%s-%s: The opened PCM Device is %s with Sampling_Rate(%u) PCM_Format(%d) Channel(%d)",
               stream_table[apstream->stream_type], __func__, pcm_path,
               apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels);
-#if 0
-        /* Virtual dai PCM is required only for normal capture */
-        if (apstream->stream_type != ASTREAM_CAPTURE_LOW_LATENCY &&
-            apstream->stream_type != ASTREAM_CAPTURE_CALL &&
-            apstream->stream_type != ASTREAM_CAPTURE_FM_TUNER &&
-            apstream->stream_type != ASTREAM_CAPTURE_FM_RECORDING &&
-            apstream->stream_type != ASTREAM_CAPTURE_MMAP) {
-            /* WDMA pcm should be started before opening virtual pcm */
-            if (pcm_start(apstream->dma_pcm) == 0) {
-                ALOGI("proxy-%s: PCM Device(%s) with SR(%u) PF(%d) CC(%d) is started",
-                      __func__, pcm_path, apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels);
-            } else {
-                ALOGE("proxy-%s: PCM Device(%s) with SR(%u) PF(%d) CC(%d) cannot be started as error(%s)",
-                      __func__, pcm_path, apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels,
-                      pcm_get_error(apstream->dma_pcm));
-                goto err_open;
-            }
-
-            apstream->pcm = pcm_open(VIRTUAL_PRIMARY_CAPTURE_CARD, VIRTUAL_PRIMARY_CAPTURE_DEVICE, flags, &apstream->pcmconfig);
-            if (apstream->pcm && !pcm_is_ready(apstream->pcm)) {
-                /* pcm_open does always return pcm structure, not NULL */
-                ALOGE("%s-%s: Virtual PCM Device is not ready with Sampling_Rate(%u) error(%s)!",
-                      stream_table[apstream->stream_type], __func__, apstream->pcmconfig.rate,
-                      pcm_get_error(apstream->pcm));
-                goto err_open;
-            }
-
-            snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c", VIRTUAL_PRIMARY_CAPTURE_CARD, VIRTUAL_PRIMARY_CAPTURE_DEVICE, 'c');
-            ALOGI("%s-%s: The opened Virtual PCM Device is %s with Sampling_Rate(%u) PCM_Format(%d) Channel(%d)",
-                  stream_table[apstream->stream_type], __func__, pcm_path,
-                  apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels);
-        } else {
-            apstream->pcm = apstream->dma_pcm;
-            apstream->dma_pcm = NULL;
-        }
-#else
         apstream->pcm = apstream->dma_pcm;
         apstream->dma_pcm = NULL;
-#endif
 
         apstream->compress = NULL;
 
@@ -3059,17 +3022,6 @@ int proxy_open_capture_stream(void *proxy_stream, int32_t min_size_frames, void 
                 goto err_open;
             }
         }
-#if 0 // Need to double check this code
-        /* HACK for MMAP/Low-latency capture path routing, normal recording uses virtualPCM DAI
-        * firmware component but MMAP/Low-latency case for reducing latency we have to capture
-        * data directly from WDMA, therefore VirtualPCM DAI is disabled after routing */
-        if (apstream->stream_type == ASTREAM_CAPTURE_MMAP ||
-            apstream->stream_type == ASTREAM_CAPTURE_LOW_LATENCY) {
-            proxy_set_mixer_value_string(aproxy, MIXER_CTL_ABOX_CATPURE_VPCMDAI_INSRC, "None");
-            ALOGI("%s-%s: MMAP VPCMIN_DAI0 component disconnect forcefully",
-                        stream_table[apstream->stream_type], __func__);
-        }
-#endif
     } else
         ALOGW("%s-%s: PCM Device is already opened!", stream_table[apstream->stream_type], __func__);
 
@@ -3610,10 +3562,6 @@ bool proxy_set_route(void *proxy, int ausage, int device, int modifier, bool set
             // Set Loopback for Capture Path
             enable_internal_path(aproxy, routed_ausage, routed_device);
 
-#if 0
-            if (aproxy->audio_mode == AUDIO_MODE_IN_COMMUNICATION)
-                proxy_set_call_path_param(CALL_PATH_SET, 0xFF, 0); // This 0xFF value will be chaged to CALL_NONE in common code.
-#endif
         }
     } else {
         if (routed_ausage == AUSAGE_FM_RADIO_TUNER ||
@@ -4174,42 +4122,6 @@ int proxy_get_microphones(void *proxy, void *array, int *count)
     }
 
     return ret;
-}
-
-void proxy_update_uhqa_playback_stream(void *proxy_stream, int hq_mode)
-{
-#if 0
-    struct audio_proxy_stream *apstream = (struct audio_proxy_stream *)proxy_stream;
-    audio_quality_mode_t high_quality_mode = (audio_quality_mode_t)hq_mode;
-
-    ALOGD("proxy-%s: mode(%d)", __func__, high_quality_mode);
-
-    if (apstream) {
-        if (apstream->stream_type == ASTREAM_PLAYBACK_COMPR_OFFLOAD) {
-            // offload case
-        } else if (apstream->stream_type == ASTREAM_PLAYBACK_AUX_DIGITAL) {
-            // DP/HDMI case
-            if (high_quality_mode == AUDIO_QUALITY_UHQ) {
-                apstream->pcmconfig.format = UHQA_MEDIA_FORMAT;
-            } else {
-                apstream->pcmconfig.format = DEFAULT_MEDIA_FORMAT;
-            }
-            apstream->requested_format = get_pcmformat_from_alsaformat(apstream->pcmconfig.format);
-        } else if (apstream->stream_type == ASTREAM_PLAYBACK_DEEP_BUFFER) {
-            struct pcm_config pcm_config_map[AUDIO_QUALITY_CNT] = {
-                    pcm_config_deep_playback,
-                    pcm_config_deep_playback_uhqa,
-                    pcm_config_deep_playback_wide_res,
-                    pcm_config_deep_playback_suhqa,
-            };
-            apstream->pcmconfig = pcm_config_map[high_quality_mode];
-            apstream->requested_format = get_pcmformat_from_alsaformat(apstream->pcmconfig.format);
-            apstream->requested_sample_rate = apstream->pcmconfig.rate;
-        } else {
-            ALOGVV("proxy-%s: not supported stream",  __func__);
-        }
-    }
-#endif
 }
 
 void proxy_set_uhqa_stream_config(void *proxy_stream, bool config)
