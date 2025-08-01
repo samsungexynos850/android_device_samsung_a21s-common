@@ -18,9 +18,6 @@
 #define __EXYNOS_AUDIOPROXY_MIXER_H__
 
 #include <audio_route/audio_route.h>
-#ifdef SEC_PRODUCT_FEATURE_AUDIO_COMMON
-#include <audio_route/audio_route_exynos.h>
-#endif
 
 /* Mixer Card Definition */
 #define MIXER_CARD0     0
