@@ -48,6 +48,10 @@
 #define ABOX_TICKLE_CONTROL_NAME "ABOX Tickle"
 #define ABOX_TICKLE_ON      1
 
+// Call volume
+#define CALL_VOLUME_CONTROL_NAME "ABOX Speech Volume"
+#define CALL_PLAYBACK_VOLUME_MAX   15
+
 typedef enum {
     /* USBMODE         = 0, */
     MUTE_CONTROL    = 1,
