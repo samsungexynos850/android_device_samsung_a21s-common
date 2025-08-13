@@ -3,6 +3,9 @@ on early-init
     mkdir /mnt/vendor/persist 0771 system system
 
 on init
+    # AFC permissions for fast charge
+    chown system radio /sys/class/sec/switch/afc_disable
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 	
