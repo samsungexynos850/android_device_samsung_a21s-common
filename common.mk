@@ -287,7 +287,7 @@ PRODUCT_PACKAGES += \
 
 # NFC and Secure Element packages
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service.samsung \
+    android.hardware.nfc-service.sec \
     com.android.nfc_extras \
     Tag
 

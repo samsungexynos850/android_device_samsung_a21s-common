@@ -12,6 +12,10 @@
         "target_path": "hardware/samsung_slsi/libbt"
     },
     {
+        "repository": "android_hardware_samsung_slsi_nfc",
+        "target_path": "hardware/samsung_slsi/nfc"
+    },
+    {
         "repository": "android_hardware_samsung_slsi-linaro_config",
         "target_path": "hardware/samsung_slsi-linaro/config"
     },
