@@ -56,7 +56,7 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 ## Camera
-$(call soong_config_set,samsungCameraVars,usage_64bit,true)
+$(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
 
 # Camera
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
@@ -121,9 +121,9 @@ AB_OTA_UPDATER := false
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/batt_slate_mode)
 $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
-$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
-$(call soong_config_set,lineage_health,charging_control_supports_toggle,true)
-$(call soong_config_set,lineage_health,charging_control_supports_deadline,false)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_toggle,true)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_deadline,false)
 $(call soong_config_set,lineage_health,fast_charge_node,/sys/class/sec/switch/afc_disable)
 $(call soong_config_set,lineage_health,fast_charge_value_none,1)
 $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
