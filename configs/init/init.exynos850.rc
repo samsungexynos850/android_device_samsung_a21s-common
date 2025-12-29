@@ -107,7 +107,6 @@ on init
     chown system system /dev/cluster1_freq_max
     chown system system /dev/cluster2_freq_min
     chown system system /dev/cluster2_freq_max
-    chown system system /dev/cpu_dma_latency
     chown system system /dev/stune/top-app/schedtune.boost
     chmod 0664 /dev/cluster0_freq_min
     chmod 0664 /dev/cluster0_freq_max
@@ -115,19 +114,22 @@ on init
     chmod 0664 /dev/cluster1_freq_max
     chmod 0664 /dev/cluster2_freq_min
     chmod 0664 /dev/cluster2_freq_max
-    chmod 0664 /dev/cpu_dma_latency
     chmod 0664 /dev/stune/top-app/schedtune.boost
 
     chown system system /sys/kernel/ems/emstune/req_mode
     chmod 0664 /sys/kernel/ems/emstune/req_mode
 
-# GPU DVFS
+    # GPU DVFS
     chown system system /sys/kernel/gpu/gpu_min_clock
     chown system system /sys/kernel/gpu/gpu_max_clock
     chown system system /sys/kernel/gpu/gpu_freq_table
     chmod 0664 /sys/kernel/gpu/gpu_min_clock
     chmod 0664 /sys/kernel/gpu/gpu_max_clock
     chmod 0444 /sys/kernel/gpu/gpu_freq_table
+
+    # am_app_launch
+    chmod 0664 /sys/kernel/mm/vmscan/am_app_launch
+    chown system system /sys/kernel/mm/vmscan/am_app_launch
 
     #sensor
     chmod 0664 /dev/nanohub
@@ -415,14 +417,17 @@ on boot
     chmod 0664 /sys/devices/platform/11500000.mali/dvfs_table
 
     #BUS
-    chown system radio /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min
-    chown system radio /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/available_frequencies
+    chown system system /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min
+    chown system system /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/available_frequencies
     chmod 0664 /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min
     chmod 0664 /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/available_frequencies
 
     #Secure OS
     chown system radio /sys/devices/system/sec_os_ctrl/migrate_os
     chmod 0664 sys/devices/system/sec_os_ctrl/migrate_os
+
+    #Touchscreen
+    chown system system /sys/class/sec/tsp/cmd
 
 # Permission for USB SELECT
     chown system system /sys/class/android_usb/android0/enable
