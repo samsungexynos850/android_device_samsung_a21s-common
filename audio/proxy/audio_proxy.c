@@ -2147,6 +2147,13 @@ int proxy_open_playback_stream(void *proxy_stream, int32_t min_size_frames, void
              * therefore before opening deep stream pcm node should be updated
              */
             if (apstream->stream_type == ASTREAM_PLAYBACK_DEEP_BUFFER) {
+                /* Make RDMA0 match deep buffer stream */
+                unsigned char bw = (apstream->pcmconfig.format == PCM_FORMAT_S24_LE) ? 24 : 32;
+                proxy_set_mixer_value_int(aproxy, "ABOX RDMA0 Rate", ppcmconfig->rate);
+                proxy_set_mixer_value_int(aproxy, "ABOX RDMA0 Period", ppcmconfig->period_size);
+                proxy_set_mixer_value_int(aproxy, "ABOX RDMA0 Width", bw);
+                ALOGI("proxy-%s: RDMA0 configured SR(%d) period-sz(%d) BW(%d)",
+                      __func__, ppcmconfig->rate, ppcmconfig->period_size, bw);
                 sound_device = apstream->sound_device = get_pcm_device_number(aproxy, apstream);
             }
 
