@@ -7,8 +7,12 @@ vendor/etc/dolby/dax-default.xml
 vendor/etc/floating_feature.xml
 vendor/etc/usb_audio_policy_configuration.xml
 vendor/lib/soundfx/libswdap.so
+
+# Audio (Dolby Atmos)
 vendor/lib/libprofileparamstorage.so
 vendor/lib/libsecaudiocoreutils.so
+vendor/lib64/libprofileparamstorage.so
+vendor/lib64/libsecaudiocoreutils.so
 
 # Audio Firmware
 vendor/firmware/AP_AUDIO_SLSI.bin
@@ -143,8 +147,6 @@ vendor/etc/init/vendor.samsung.rilchip.slsi.rc|95aa52333814b340e5064eae3a9bd5cb8
 vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml|c3f8ea3f6228f2d572081b0c0ae29a251de4350b
 vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml|e9cdde9d05c5cce32f76bbb164437f43b3288157
 vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml|ebbe359a9b2d78cb88debe79d9183c039afb7c01
-vendor/lib/libsemnativecarrierfeature.so|5758f3076a314d5dde595037ee33840fe61de52d
-vendor/lib/libsecril-client.so|3f8c4703d57869a05fe00ad21fb61643aac6a656
 vendor/lib64/libSemDataProps.so|86a95ebb35d80cc1ec2bdd0f80601787f1ef88ba
 vendor/lib64/libSemTelephonyProps.so|659466f18732155cbf308c14924135f2e65a3f48
 vendor/lib64/libril_sem.so|d5032186f98c1ca5b619cab3bb944c6539fffd99
