@@ -178,8 +178,7 @@ static audio_format_t get_pcmformat_from_alsaformat(enum pcm_format pcmformat)
         case PCM_FORMAT_S24_3LE:
             format = AUDIO_FORMAT_PCM_8_24_BIT;
             break;
-        case PCM_FORMAT_INVALID:
-        case PCM_FORMAT_MAX:
+        default:
             format = AUDIO_FORMAT_PCM_16_BIT;
             break;
     }
@@ -1569,8 +1568,8 @@ static void check_conversion(struct audio_proxy_stream *apstream)
     int request_cc = audio_channel_count_from_in_mask(apstream->requested_channel_mask);
 
     // Check Mono/stereo Conversion is needed or not
-    if ((request_cc == MEDIA_1_CHANNEL && apstream->pcmconfig.channels == DEFAULT_MEDIA_CHANNELS)
-        || (request_cc == DEFAULT_MEDIA_CHANNELS && apstream->pcmconfig.channels == MEDIA_1_CHANNEL)
+    if (((request_cc == MEDIA_1_CHANNEL && apstream->pcmconfig.channels == DEFAULT_MEDIA_CHANNELS)
+        || (request_cc == DEFAULT_MEDIA_CHANNELS && apstream->pcmconfig.channels == MEDIA_1_CHANNEL))
 #ifdef SEC_AUDIO_SAMSUNGRECORD
         && !apstream->skip_ch_convert
 #endif
@@ -2168,7 +2167,7 @@ int proxy_open_playback_stream(void *proxy_stream, int32_t min_size_frames, void
             }
 
             snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c", sound_card, sound_device ,'p');
-            ALOGI("%s-%s: The opened PCM Device is %s with Sampling_Rate(%u) PCM_Format(%d)  PCM_start-threshold(%d) PCM_stop-threshold(%d)",
+            ALOGI("%s-%s: The opened PCM Device is %s with Sampling_Rate(%u) PCM_Format(%d)  PCM_start-threshold(%lu) PCM_stop-threshold(%lu)",
                   stream_table[apstream->stream_type], __func__, pcm_path,
                   ppcmconfig->rate, ppcmconfig->format,
                   ppcmconfig->start_threshold, ppcmconfig->stop_threshold);
