@@ -291,6 +291,9 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     Tag
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sku/permissions/unavail.android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_disabled/unavail.hardware.samsung.nfc.xml
+
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay \
