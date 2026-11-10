@@ -56,10 +56,8 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
-    android.hardware.graphics.allocator@2.0-impl:64 \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
-    gralloc.universal3830
+    android.hardware.graphics.allocator@4.0-service \
+    android.hardware.graphics.mapper@4.0-impl
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -87,8 +85,6 @@ PRODUCT_PACKAGES += \
 # Gralloc
 PRODUCT_PACKAGES += \
     libGrallocWrapper
-
-$(call soong_config_set_bool,libui,legacy_gralloc,true)
 
 # Graphics
 # Device uses high-density artwork where available
@@ -269,7 +265,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     hardware/samsung_slsi/libbt \
     hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib \
-    hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3 \
     hardware/samsung_slsi-linaro/exynos/libaudio/audiohal_comv1 \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3
 
