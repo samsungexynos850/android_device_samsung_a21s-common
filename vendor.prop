@@ -58,8 +58,8 @@ ro.crypto.volume.metadata.method=dm-default-key
 vendor.powerhal.disp.idle_support=false
 
 # Samsung specific
-# Set csc support in OMX
-# If not set or set to 0, OMX will only use BT.601 colorspace.
+# Set csc support in gralloc
+# If not set or set to 0, only the BT.601 colorspace is used.
 ro.vendor.cscsupported=1
 
 # SoC
