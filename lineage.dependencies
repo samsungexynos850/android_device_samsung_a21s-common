@@ -16,6 +16,10 @@
         "target_path": "hardware/samsung_slsi/nfc"
     },
     {
+        "repository": "android_hardware_samsung_slsi-linaro_codec2",
+        "target_path": "hardware/samsung_slsi-linaro/codec2"
+    },
+    {
         "repository": "android_hardware_samsung_slsi-linaro_config",
         "target_path": "hardware/samsung_slsi-linaro/config"
     },
