@@ -39,19 +39,6 @@ vendor/firmware/calliope_sram.bin
 vendor/firmware/calliope_sram_2.bin
 vendor/firmware/dax_param.bin
 
-# Camera
-vendor/lib64/hw/camera.exynos850.so
-vendor/lib64/libSEF.quram.so
-vendor/lib64/libexynoscamera3.so
-vendor/lib64/libexynoscamera_plugin.so
-vendor/lib64/libexynoscamera_tdnr_plugin.so
-vendor/lib64/libmfb.so
-vendor/lib64/libremosaic_wrapper.so
-vendor/lib64/libsensorlistener.so
-vendor/lib64/libuniapi.so
-vendor/lib64/libuniplugin.so
-vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
-
 # Charger Firmware
 vendor/firmware/mfc_fw.bin
 

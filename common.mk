@@ -43,7 +43,10 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider-service.samsung
+    android.hardware.camera.provider-service.samsung \
+    camera.universal3830 \
+    libexynoscamera3 \
+    libexynoscamera_plugin
 
 # CarrierSettings
 PRODUCT_PACKAGES += \
@@ -101,10 +104,6 @@ PRODUCT_PACKAGES += \
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-service.samsung
-
-# Gralloc
-PRODUCT_PACKAGES += \
-    libGrallocWrapper
 
 # Graphics
 # Device uses high-density artwork where available
@@ -267,6 +266,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     hardware/samsung_slsi/libbt \
     hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib \
+    hardware/samsung_slsi-linaro/camera/N23 \
     hardware/samsung_slsi-linaro/exynos/libaudio/audiohal_comv1 \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3
 

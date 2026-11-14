@@ -23,7 +23,6 @@ namespace_imports = [
     'hardware/samsung',
     'hardware/samsung_slsi-linaro/exynos',
     'hardware/samsung_slsi-linaro/graphics',
-    'hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -45,11 +44,6 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('00 A4 2E 91 E1 03 1F 2A', '00 A4 2E 91 81 58 9D 52')
         .sig_replace('00 A4 2E 91 E1 03 1F 2A', '00 A4 2E 91 81 58 9D 52')
         .sig_replace('00 A4 2E 91 E1 03 1F 2A', '00 A4 2E 91 81 58 9D 52'),
-    (
-        'vendor/lib/libsensorlistener.so',
-        'vendor/lib64/libsensorlistener.so',
-    ) : blob_fixup()
-        .add_needed('libshim_sensorndkbridge.so'),
     'vendor/lib64/libssx.so': blob_fixup()
         .replace_needed('libcrypto.so', 'libcryptx.so'),
     (

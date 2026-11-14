@@ -36,8 +36,20 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset 0x01000000
 BOARD_MKBOOTIMG_ARGS += --tags_offset 0x00000100
 
 # Camera
-$(call soong_config_set,samsungCameraVars,extra_ids,52,54) # ID=52 is depth camera, ID=54 is macro
 $(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
+$(call soong_config_set,exynos_camera,target_soc_base,exynos3830)
+$(call soong_config_set,exynos_camera,back_camera_sensor,SENSOR_NAME_S5KGM2)
+# back_2 is CAMERA_ID_BACK_3 (ultra wide, SS3), back_3 is CAMERA_ID_BACK_4 (macro, SS4).
+# The GC02M1 depth sensor (CAMERA_ID_BACK_2) is not exposed.
+$(call soong_config_set,exynos_camera,back_2_camera_sensor,SENSOR_NAME_S5K4HA)
+$(call soong_config_set,exynos_camera,back_3_camera_sensor,SENSOR_NAME_GC02M1)
+$(call soong_config_set,exynos_camera,front_camera_sensor,SENSOR_NAME_HI1336)
+$(call soong_config_set,exynos_camera,back_camera_rotation,90)
+$(call soong_config_set,exynos_camera,front_camera_rotation,270)
+$(call soong_config_set,exynos_camera,secure_camera_rotation,0)
+$(call soong_config_set_bool,exynos_camera,use_camera_exynos3830_meta,true)
+$(call soong_config_set_bool,exynos_camera,uses_slsi_plugin,true)
+$(call soong_config_set_bool,exynos_camera,uses_slsi_vendor_tags,true)
 
 # Compatability Matrix
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
