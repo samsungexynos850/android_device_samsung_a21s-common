@@ -36,8 +36,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl:64 \
-    android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth-service.samsung \
     libbt-vendor:64 \
     bt_did.slsi.conf
 
