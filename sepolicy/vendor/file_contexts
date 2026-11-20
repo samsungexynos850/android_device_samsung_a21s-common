@@ -44,6 +44,9 @@
 
 # Secmem
 /dev/s5p-smem                                                                                             u:object_r:secmem_device:s0
+/dev/dmabuf_container                                                                                     u:object_r:dmabuf_container_device:s0
+/dev/dma_heap/(crypto|camera)(-uncached)?                                                                 u:object_r:vendor_dmabuf_heap_device:s0
+/dev/dma_heap/(vframe|vscaler|ext_ui|tui|secure_camera)-secure                                            u:object_r:vendor_dmabuf_secure_heap_device:s0
 
 # Sensors
 /sys/devices/platform/11d00000.spi/spi_master/spi1/spi1.0(/.*)                                            u:object_r:sysfs_iio:s0

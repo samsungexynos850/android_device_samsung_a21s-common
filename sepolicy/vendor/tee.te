@@ -1,0 +1,4 @@
+allow tee {
+    dmabuf_system_heap_device
+    vendor_dmabuf_secure_heap_device
+}:chr_file r_file_perms;
