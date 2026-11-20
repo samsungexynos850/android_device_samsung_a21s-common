@@ -160,7 +160,6 @@ VENDOR_SECURITY_PATCH := 2024-05-01
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 include device/lineage/sepolicy/exynos/sepolicy.mk
-include device/lineage/sepolicy/libion/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 # USB

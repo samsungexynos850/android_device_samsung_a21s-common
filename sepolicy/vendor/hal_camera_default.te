@@ -23,3 +23,9 @@ set_prop(hal_camera_default, vendor_camera_prop);
 dontaudit hal_camera_default default_prop:file read;
 
 hal_client_domain(hal_camera_default, hal_graphics_allocator)
+
+allow hal_camera_default {
+    vendor_dmabuf_heap_device
+    vendor_dmabuf_secure_heap_device
+    dmabuf_container_device
+}:chr_file r_file_perms;
