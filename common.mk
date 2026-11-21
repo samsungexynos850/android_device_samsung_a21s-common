@@ -145,6 +145,10 @@ $(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/a
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
+# Linker
+PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
+    $(LOCAL_PATH)/configs/linker/linker.config.json
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml
